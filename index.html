@@ -6,28 +6,33 @@
   <title>Mr. Cox's Math Classes</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Reset & Base */
+    /* --------------------------------------------------
+       RESET & BASE
+    -------------------------------------------------- */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: #f2efe9; color: #000; line-height: 1.6; }
+    body { background-color: #fff; color: #000; line-height: 1.6; }
 
-    /* Header */
+    /* --------------------------------------------------
+       HEADER
+    -------------------------------------------------- */
     header {
-      border: 8px solid #000;
-      overflow: hidden;
+      border: 12px solid #000; /* thick black lines */
       text-align: center;
       margin-bottom: 2rem;
     }
     header h1 {
-      background-color: #ff7f7f; /* bold red */
+      background-color: #ff0000; /* red */
       color: #fff;
       padding: 2rem 1rem;
       font-size: 2.8rem;
-      border-bottom: 8px solid #000;
       font-weight: 700;
+      border-bottom: 12px solid #000; /* bold bottom line */
       letter-spacing: 2px;
     }
 
-    /* Main boxes container */
+    /* --------------------------------------------------
+       MAIN BOXES
+    -------------------------------------------------- */
     .boxes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -36,7 +41,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Individual box */
     .box {
       display: flex;
       align-items: center;
@@ -46,32 +50,37 @@
       font-weight: 700;
       color: #fff;
       text-decoration: none;
-      border: 6px solid #000;
+      border: 12px solid #000; /* thick black borders */
       transition: transform 0.2s, filter 0.2s;
     }
 
-    .box.ab { background-color: #40c057; }   /* green for AB */
-    .box.bc { background-color: #339af0; }   /* blue for BC */
-    .box.cool { background-color: #ff922b; } /* orange for Cool Math Stuff */
+    /* Primary colors for boxes */
+    .box.ab { background-color: #ffd700; color: #000; } /* yellow */
+    .box.bc { background-color: #0047ab; color: #fff; } /* blue */
+    .box.cool { background-color: #ff0000; color: #fff; } /* red */
 
     .box:hover {
       transform: scale(1.05);
       filter: brightness(1.1);
     }
 
-    /* Footer */
+    /* --------------------------------------------------
+       FOOTER
+    -------------------------------------------------- */
     footer {
-      background-color: #6ea8fe; /* soft blue */
+      background-color: #0047ab; /* blue */
       color: #fff;
       padding: 2rem 1rem;
-      border-top: 8px solid #000;
+      border-top: 12px solid #000; /* thick top border */
       text-align: center;
       font-weight: 700;
       letter-spacing: 1px;
       margin-top: 2rem;
     }
 
-    /* Responsive */
+    /* --------------------------------------------------
+       RESPONSIVE
+    -------------------------------------------------- */
     @media (max-width: 768px) {
       .boxes {
         grid-template-columns: 1fr;
@@ -81,7 +90,8 @@
     }
   </style>
 </head>
-<body>
+<body class="theme-mondrian">
+
   <header>
     <h1>Mr. Cox's Math Classes</h1>
   </header>
@@ -95,5 +105,6 @@
   <footer>
     &copy; 2025 Mr. Cox
   </footer>
+
 </body>
 </html>
