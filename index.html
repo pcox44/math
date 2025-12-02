@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mr. Cox's Math Classes</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* General Reset */
+    /* Reset & Body */
     * {
       margin: 0;
       padding: 0;
@@ -15,147 +14,63 @@
     }
 
     body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       background-color: #fdf6f0;
       color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #4a90e2;
-      color: #fff;
-      padding: 1rem 0;
-    }
-
-    header h1 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      padding: 2rem;
     }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
       color: #4a90e2;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background-color: #4a90e2;
-      color: #fff;
-      text-decoration: none;
+      margin: 1rem;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      border-radius: 6px;
-      transition: background-color 0.3s;
+      color: #fff;
+      background-color: #4a90e2;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     .btn:hover {
       background-color: #357ab7;
-    }
-
-    .classes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-      max-width: 350px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    .card h3 {
-      margin-bottom: 1rem;
-      color: #4a90e2;
+      transform: translateY(-3px);
     }
 
     footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: #f0f0f0;
-      margin-top: 3rem;
-      font-size: 0.95rem;
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.9rem;
       color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .btn {
+        width: 80%;
+        font-size: 1rem;
+        padding: 1rem 0;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mr. Cox's Math Classes</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-      </ul>
-    </nav>
-  </header>
+  <h1>Welcome to Mr. Cox's Math Classes</h1>
 
-  <main>
-    <section class="hero">
-      <h2>Welcome to AP Calculus Resources!</h2>
-      <p>Explore worksheets, notes, practice problems, and video lessons for AP Calculus AB and BC.</p>
-      <a href="ab.html" class="btn">Get Started</a>
-    </section>
-
-    <section class="classes">
-      <div class="card">
-        <h3>AP Calculus AB</h3>
-        <p>Lessons, practice problems, and solutions for AP Calculus AB.</p>
-        <a href="ab.html" class="btn">Explore AB</a>
-      </div>
-      <div class="card">
-        <h3>AP Calculus BC</h3>
-        <p>Resources for AP Calculus BC, including series, parametrics, and more.</p>
-        <a href="bc.html" class="btn">Explore BC</a>
-      </div>
-    </section>
-  </main>
+  <a href="ab.html" class="btn">ARE YOU IN AB?</a>
+  <a href="bc.html" class="btn">ARE YOU IN BC?</a>
 
   <footer>
     <p>© 2025 Mr. Cox's Math Classes</p>
