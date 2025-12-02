@@ -14,15 +14,12 @@
     header {
       border: 8px solid #000;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+      text-align: center;
       margin-bottom: 2rem;
     }
     header h1 {
-      background-color: #ff7f7f; /* soft red */
+      background-color: #ff7f7f; /* bold red */
       color: #fff;
-      text-align: center;
       padding: 2rem 1rem;
       font-size: 2.8rem;
       border-bottom: 8px solid #000;
@@ -30,27 +27,37 @@
       letter-spacing: 2px;
     }
 
-    /* Navigation */
-    nav ul {
+    /* Main boxes container */
+    .boxes {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+      margin-bottom: 2rem;
     }
-    nav li a {
-      display: block;
-      text-align: center;
-      padding: 1rem;
+
+    /* Individual box */
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      font-size: 1.8rem;
       font-weight: 700;
-      border-right: 8px solid #000;
-      border-bottom: 8px solid #000;
-      text-decoration: none;
-      transition: filter 0.2s;
       color: #fff;
+      text-decoration: none;
+      border: 6px solid #000;
+      transition: transform 0.2s, filter 0.2s;
     }
-    nav li:nth-child(1) a { background-color: #6ea8fe; } /* soft blue */
-    nav li:nth-child(2) a { background-color: #fff3a0; color: #000; } /* soft yellow */
-    nav li:nth-child(3) a { background-color: #ffffff; color: #000; } /* white */
-    nav li:nth-child(4) a { background-color: #ff7f7f; } /* soft red */
-    nav li a:hover { filter: brightness(1.1); }
+
+    .box.ab { background-color: #40c057; }   /* green for AB */
+    .box.bc { background-color: #339af0; }   /* blue for BC */
+    .box.cool { background-color: #ff922b; } /* orange for Cool Math Stuff */
+
+    .box:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
 
     /* Footer */
     footer {
@@ -66,22 +73,27 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav ul { grid-template-columns: repeat(2, 1fr); }
+      .boxes {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Mr. Cox's Math Classes</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-        <li><a href="cool.html">Cool Math Stuff</a></li>
-      </ul>
-    </nav>
   </header>
 
+  <main class="boxes">
+    <a href="ab.html" class="box ab">AP Calculus AB</a>
+    <a href="bc.html" class="box bc">AP Calculus BC</a>
+    <a href="cool.html" class="box cool">Cool Math Stuff</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Mr. Cox
+  </footer>
 </body>
 </html>
