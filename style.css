@@ -152,52 +152,50 @@ footer {
 }
 
 /* ==================================================
-   THEMES — Soft Mondrian Colors
+   THEMES — Bold Homepage & Soft AB/BC
 ================================================== */
 
 /* --------------------------------------------------
-   HOMEPAGE — Soft Red Header, Soft Blue/Yellow/White Nav
+   HOMEPAGE — Bold Mondrian Colors
 -------------------------------------------------- */
-.theme-mondrian header h1 { background-color: #ff7f7f; } /* softer red */
-.theme-mondrian nav li:nth-child(1) a { background-color: #6ea8fe; color:#fff; } /* softer blue */
-.theme-mondrian nav li:nth-child(2) a { background-color: #fff3a0; color:#000; } /* softer yellow */
-.theme-mondrian nav li:nth-child(3) a { background-color: #ffffff; color:#000; } /* white */
+.theme-mondrian header h1 {
+  background-color: #ff0000; /* bold red */
+  color: #fff;
+}
 
-h2.theme-mondrian::before { background-color: #ff7f7f; border-right: 4px solid #000; }
-h2.theme-mondrian::after  { background-color: #6ea8fe; border-top: 4px solid #000; }
-table.theme-mondrian thead { background-color: #fff3a0; }
+.theme-mondrian nav li:nth-child(1) a {
+  background-color: #0047ab; /* bold blue */
+  color: #fff;
+}
 
-footer.theme-mondrian { background-color: #6ea8fe; color: #fff; }
+.theme-mondrian nav li:nth-child(2) a {
+  background-color: #ffd700; /* bold yellow */
+  color: #000;
+}
 
-/* --------------------------------------------------
-   AB PAGE — Soft Yellow Header Theme
--------------------------------------------------- */
-.theme-ab-mondrian header h1 { background-color: #fff3a0; color: #000; } /* yellow header */
-.theme-ab-mondrian nav li:nth-child(1) a { background-color: #ff9b9b; color:#fff; } /* soft red */
-.theme-ab-mondrian nav li:nth-child(2) a { background-color: #80c1ff; color:#fff; } /* soft blue */
-.theme-ab-mondrian nav li:nth-child(3) a { background-color: #ffffff; color:#000; } /* white */
+.theme-mondrian nav li:nth-child(3) a {
+  background-color: #ffffff; /* white */
+  color: #000;
+}
 
-h2.theme-ab-mondrian::before { background-color: #ff9b9b; border-right: 4px solid #000; }
-h2.theme-ab-mondrian::after  { background-color: #80c1ff; border-top: 4px solid #000; }
-table.theme-ab-mondrian thead { background-color: #fff3a0; }
-footer.theme-ab-mondrian { background-color: #fff3a0; color: #000; }
+h2.theme-mondrian::before {
+  background-color: #ff0000;
+  border-right: 4px solid #000;
+}
 
-/* --------------------------------------------------
-   BC PAGE — Soft Blue Header Theme
--------------------------------------------------- */
-.theme-bc-mondrian header h1 { background-color: #6ea8fe; color: #fff; } /* blue header */
-.theme-bc-mondrian nav li:nth-child(1) a { background-color: #fff3a0; color:#000; } /* soft yellow */
-.theme-bc-mondrian nav li:nth-child(2) a { background-color: #ff9b9b; color:#fff; } /* soft red */
-.theme-bc-mondrian nav li:nth-child(3) a { background-color: #ffffff; color:#000; } /* white */
+h2.theme-mondrian::after {
+  background-color: #0047ab;
+  border-top: 4px solid #000;
+}
 
-h2.theme-bc-mondrian::before { background-color: #ff9b9b; border-right: 4px solid #000; }
-h2.theme-bc-mondrian::after  { background-color: #fff3a0; border-top: 4px solid #000; }
-table.theme-bc-mondrian thead { background-color: #6ea8fe; color: #fff; }
-footer.theme-bc-mondrian { background-color: #6ea8fe; color: #fff; }
+table.theme-mondrian thead {
+  background-color: #ffd700;
+}
 
-/* ==================================================
-   THEMES — Soft AB and BC Colors (Original Style)
-================================================== */
+footer.theme-mondrian {
+  background-color: #0047ab;
+  color: #fff;
+}
 
 /* --------------------------------------------------
    AB PAGE — Soft Green Theme
