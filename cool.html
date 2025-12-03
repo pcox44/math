@@ -6,35 +6,43 @@
   <title>Cool Math Stuff</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body.theme-red {
-      background-color: #fdf6f0;
-      color: #333;
+    /* ---------- Base Styles ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f0f8ff; /* light blue theme */
+      color: #000;
+      margin: 0;
+      padding: 0;
     }
 
-    header {
-      background-color: #d64541; /* red theme */
-      color: #fff;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 1rem 0;
-      text-align: center;
-      margin-bottom: 2rem;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #003366; /* dark blue */
     }
 
     nav ul {
       display: flex;
       justify-content: center;
-      list-style: none;
       gap: 2rem;
-      margin-top: 0.5rem;
+      list-style: none;
+      margin-bottom: 2rem;
+      padding-left: 0;
     }
 
     nav a {
-      color: #fff;
       text-decoration: none;
-      font-weight: 500;
+      color: #003366;
+      font-weight: 600;
     }
 
     nav a:hover {
@@ -42,135 +50,157 @@
     }
 
     h2 {
-      color: #d64541; /* red theme */
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-      color: #d64541; /* red theme */
-    }
-
-    .card p {
-      font-size: 0.95rem;
+      margin-top: 2rem;
       margin-bottom: 1rem;
-      min-height: 40px; /* placeholder height for description */
+      color: #003366;
+      text-align: center;
     }
 
-    .btn {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+
+    th, td {
+      border: 2px solid #003366;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #cce0ff;
+      font-weight: 700;
+    }
+
+    a.btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background-color: #d64541; /* red theme */
+      padding: 0.5rem 1rem;
+      background-color: #003366;
       color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 6px;
+      border-radius: 5px;
       transition: background-color 0.3s;
     }
 
-    .btn:hover {
-      background-color: #a73630;
+    a.btn:hover {
+      background-color: #001f4d;
     }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: #f0f0f0;
-      font-size: 0.95rem;
-      color: #666;
-      margin-top: 3rem;
+    /* ---------- Responsive Styles ---------- */
+    @media (max-width: 1024px) {
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      table {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        font-size: 1.1rem;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      th, td {
+        padding: 0.4rem 0.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+        padding: 0.5rem 0;
+      }
+      table {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
-<body class="theme-red">
+<body>
   <header>
-    <h1>Cool Math Stuff</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Cool Math Stuff</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ab.html">AP Calculus AB</a></li>
+          <li><a href="bc.html">AP Calculus BC</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
-    <h2>Fun Math Projects</h2>
-    <section class="projects">
-      <div class="card">
-        <h3>Qu0x</h3>
-        <p>A number game where you use 5 numbers and operations to make a target number.</p>
-        <a href="https://qu0x.com" class="btn">Open Qu0x</a>
-      </div>
-      <div class="card">
-        <h3>Stick Simulation</h3>
-        <p>Simulation to show the expected number of draws on a uniform distribution to reach a target sum.</p>
-        <a href="https://pcox44.github.io/uniform-sum" class="btn">Open Simulation</a>
-      </div>
-      <div class="card">
-        <h3>Ants on Polygons</h3>
-        <p>Simulation to model a random walk on a closed circuit.</p>
-        <a href="https://pcox44.github.io/ants" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Schur Colorings</h3>
-        <p>Game to try to maximize Schur numbers.</p>
-        <a href="https://pcox44.github.io/schur" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Picking a Porta-Potty</h3>
-        <p>Simulation for the secretary problem with a changed context.</p>
-        <a href="https://pcox44.github.io/porta-potty" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Catching All Pokemon</h3>
-        <p>The Coupon Collector Problem simulator, but with Pokemon.</p>
-        <a href="https://pcox44.github.io/pokemon" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Buffon's Needle</h3>
-        <p>Simulation to show pi through the Buffon Needle process, but with footballs.</p>
-        <a href="https://pcox44.github.io/buffon" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Math Dance</h3>
-        <p>Demonstration to show how mapping numbers shows beautiful patterns.</p>
-        <a href="https://pcox44.github.io/mathdance" class="btn">Open Project</a>
-      </div>
-      <div class="card">
-        <h3>Coloring Patterns with Numbers</h3>
-        <p>Colors the screen based on number properties selected.</p>
-        <a href="https://pcox44.github.io/colors" class="btn">Open Project</a>
-      </div>
+    <section class="resources">
+      <h2>Fun Math Projects</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Qu0x</td>
+            <td>A number game where you use 5 numbers and operations to make a target number.</td>
+            <td><a href="https://qu0x.com" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Stick Simulation</td>
+            <td>Simulation to show the expected number of draws on a uniform distribution to reach a target sum.</td>
+            <td><a href="https://pcox44.github.io/uniform-sum" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Ants on Polygons</td>
+            <td>Simulation to model a random walk on a closed circuit.</td>
+            <td><a href="https://pcox44.github.io/ants" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Schur Colorings</td>
+            <td>Game to try to maximize Schur numbers.</td>
+            <td><a href="https://pcox44.github.io/schur" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Picking a Porta-Potty</td>
+            <td>Simulation for the secretary problem with a changed context.</td>
+            <td><a href="https://pcox44.github.io/porta-potty" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Catching All Pokemon</td>
+            <td>The Coupon Collector Problem simulator, but with Pokemon.</td>
+            <td><a href="https://pcox44.github.io/pokemon" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Buffon's Needle</td>
+            <td>Simulation to show pi through the Buffon Needle process, but with footballs.</td>
+            <td><a href="https://pcox44.github.io/buffon" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Math Dance</td>
+            <td>Demonstration to show how mapping numbers shows beautiful patterns.</td>
+            <td><a href="https://pcox44.github.io/mathdance" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+          <tr>
+            <td>Coloring Patterns with Numbers</td>
+            <td>Colors the screen based on number properties selected.</td>
+            <td><a href="https://pcox44.github.io/colors" class="btn" target="_blank">Open Project</a></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
-
-  <footer>
-    &copy; 2025 Patrick Cox. All rights reserved.
-  </footer>
 </body>
 </html>
