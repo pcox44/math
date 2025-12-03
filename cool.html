@@ -1,188 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cool Math Stuff</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #fdf6f0;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+<section class="projects">
+  <div class="card">
+    <button onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
+    <p>Use 5 numbers and math operations to reach a target number.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
+    <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
+    <p>Random walk simulation on a closed polygonal path.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
+    <p>Try to maximize Schur numbers through coloring strategies.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Picking a Porta-Potty</button>
+    <p>Apply the secretary problem concept in a fun new context.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Catching All Pokemon</button>
+    <p>A Coupon Collector Problem simulation themed with Pokemon.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
+    <p>Estimate π using a needle-drop simulation with footballs.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
+    <p>Visualize number mappings as beautiful animated patterns.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring Patterns with Numbers</button>
+    <p>Color the screen based on properties of numbers you select.</p>
+  </div>
 
-    /* ---------- Header ---------- */
-    header {
-      background-color: #d64541;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-      margin-top: 1rem;
-      padding-left: 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.25rem 0.5rem;
-      transition: background-color 0.3s, color 0.3s;
-      border-radius: 4px;
-    }
-
-    nav a:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
-
-    h2 {
-      color: #d64541;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      font-weight: 600;
-    }
-
-    /* ---------- Project Cards ---------- */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    .card button {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      background-color: #d64541;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .card button:hover {
-      background-color: #a73630;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-
-    /* ---------- Responsive Styles ---------- */
-    @media (max-width: 768px) {
-      .projects {
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      .card {
-        max-width: 100%;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      nav a {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Cool Math Stuff</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container">
-    <h2>Fun Math Projects</h2>
-    <section class="projects">
-      <div class="card">
-        <button onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
-        <p>Use 5 numbers and math operations to reach a target number.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
-        <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
-        <p>Random walk simulation on a closed polygonal path.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
-        <p>Try to maximize Schur numbers through coloring strategies.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Picking a Porta-Potty</button>
-        <p>Apply the secretary problem concept in a fun new context.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Catching All Pokemon</button>
-        <p>A Coupon Collector Problem simulation themed with Pokemon.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
-        <p>Estimate π using a needle-drop simulation with footballs.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
-        <p>Visualize number mappings as beautiful animated patterns.</p>
-      </div>
-      <div class="card">
-        <button onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring Patterns with Numbers</button>
-        <p>Color the screen based on properties of numbers you select.</p>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+  <!-- NEW CARDS -->
+  <div class="card">
+    <button onclick="window.open('#','_blank')">Game of Life</button>
+    <p>Simulate Conway's Game of Life with cells that live, die, or reproduce each step.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('#','_blank')">Barnsley Fern</button>
+    <p>Generate the Barnsley Fern fractal using iterative function systems.</p>
+  </div>
+  <div class="card">
+    <button onclick="window.open('#','_blank')">Quotient Floor</button>
+    <p>Divide two numbers, take the floor, and graph the pattern of even and odd results.</p>
+  </div>
+</section>
