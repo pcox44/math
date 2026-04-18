@@ -6,7 +6,7 @@
 <title>AP Calculus AB</title>
 
 <style>
-/* ---------- Base ---------- */
+/* ---------- BASE ---------- */
 body {
   font-family: 'Poppins', sans-serif;
   background: #fdf6f0;
@@ -21,7 +21,7 @@ body {
   padding: 1.5rem 0;
 }
 
-/* ---------- Header ---------- */
+/* ---------- HEADER ---------- */
 header h1 {
   text-align: center;
   color: #2e7d32;
@@ -43,29 +43,28 @@ nav a {
   text-decoration: none;
 }
 
-/* ---------- Section titles ---------- */
+/* ---------- TITLES ---------- */
 h2 {
   color: #2e7d32;
   margin: 2rem 0 1rem;
 }
 
-/* ---------- CARD GRID SYSTEM ---------- */
+/* ---------- GRID ---------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
-/* ---------- CARD STYLE ---------- */
+/* ---------- BASE CARD ---------- */
 .card {
   display: block;
   padding: 1rem 1.2rem;
   border: 2px solid #2e7d32;
   border-radius: 14px;
-  background: linear-gradient(135deg, #d0f0c0, #fdf6f0);
   text-decoration: none;
-  color: #1b5e20;
   font-weight: 600;
+  color: #1b5e20;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: 0.15s ease;
 }
@@ -73,25 +72,35 @@ h2 {
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  background: #b2dfdb;
 }
 
-/* ---------- UNIT BLOCKS ---------- */
+/* ---------- UNIT COLORS ---------- */
 .unit-card {
   padding: 1.2rem;
   border-radius: 14px;
   border: 2px solid #2e7d32;
-  background: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  color: #1b5e20;
+  font-weight: 600;
 }
 
+/* individual colors */
+.u1 { background: #d0f0c0; }
+.u2 { background: #c8e6c9; }
+.u3 { background: #bbdefb; }
+.u4 { background: #ffe0b2; }
+.u5 { background: #f8bbd0; }
+.u6 { background: #d1c4e9; }
+.u7 { background: #b2dfdb; }
+.u8 { background: #fff9c4; }
+
+/* ---------- UNIT TITLE ---------- */
 .unit-title {
   font-weight: 700;
-  color: #2e7d32;
   margin-bottom: 0.8rem;
 }
 
-/* ---------- LINK ROWS ---------- */
+/* ---------- LINKS INSIDE CARDS ---------- */
 .link-row {
   display: flex;
   flex-wrap: wrap;
@@ -99,16 +108,28 @@ h2 {
 }
 
 .link-row a {
-  font-size: 0.9rem;
-  color: #2e7d32;
+  font-size: 0.85rem;
   text-decoration: none;
   border: 1px solid #2e7d32;
   padding: 0.3rem 0.6rem;
   border-radius: 8px;
+  color: #1b5e20;
+  background: rgba(255,255,255,0.4);
 }
 
 .link-row a:hover {
-  background: #d0f0c0;
+  background: rgba(255,255,255,0.8);
+}
+
+/* ---------- REVIEW CARDS ---------- */
+.review-card {
+  background: #e1f5fe;
+}
+
+/* ---------- HOVER LIFT ---------- */
+.card:hover,
+.unit-card:hover {
+  transform: translateY(-3px);
 }
 </style>
 </head>
@@ -130,23 +151,23 @@ h2 {
 
 <main class="container">
 
-<!-- ================= QUICK ACCESS ================= -->
+<!-- ================= REVIEW ================= -->
 <h2>Review Resources</h2>
 <div class="grid">
 
-  <a class="card" href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf" target="_blank">
+  <a class="card review-card" href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf" target="_blank">
     📄 AB Cheat Sheet
   </a>
 
-  <a class="card" href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">
+  <a class="card review-card" href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">
     🧠 What to Know by Unit
   </a>
 
-  <a class="card" href="#">
+  <a class="card review-card" href="#">
     🎯 You Gotta Know Flashcards
   </a>
 
-  <a class="card" href="#">
+  <a class="card review-card" href="#">
     📱 Online Flashcards
   </a>
 
@@ -154,101 +175,85 @@ h2 {
 
 <!-- ================= UNITS ================= -->
 <h2>AB Units</h2>
-
 <div class="grid">
 
-  <div class="unit-card">
+  <div class="unit-card u1">
     <div class="unit-title">Unit 1 - Limits and Continuity</div>
     <div class="link-row">
-      <a href="https://drive.google.com/file/d/1miy65EsyTFJNAtwUClb3AXDxaa5LBVHl/view">Packet</a>
-      <a href="https://drive.google.com/file/d/1qCv7B5RZL7tdCOzeVGLjE3aQ0qgPQMGq/view">Solutions</a>
-      <a href="https://drive.google.com/file/d/1Ml64d-7xNKeuaghSMiSCMmWufPs5QKZ-/view">Practice</a>
-      <a href="https://youtube.com">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u2">
     <div class="unit-title">Unit 2 - Differentiation</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u3">
     <div class="unit-title">Unit 3 - Composite Functions</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u4">
     <div class="unit-title">Unit 4 - Applications</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u5">
     <div class="unit-title">Unit 5 - Analysis</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u6">
     <div class="unit-title">Unit 6 - Integration</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u7">
     <div class="unit-title">Unit 7 - Differential Equations</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
-  <div class="unit-card">
+  <div class="unit-card u8">
     <div class="unit-title">Unit 8 - Applications of Integration</div>
     <div class="link-row">
-      <a href="#">Packet</a><a href="#">Solutions</a><a href="#">Practice</a><a href="#">Videos</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- ================= PRACTICE TESTS ================= -->
-<h2>Practice Tests & AP Exam Prep</h2>
-
-<div class="grid">
-
-  <div class="unit-card">
-    <div class="unit-title">FRQ Test 1</div>
-    <div class="link-row">
-      <a href="#">Practice</a><a href="#">Solutions</a><a href="#">Exam</a>
-    </div>
-  </div>
-
-  <div class="unit-card">
-    <div class="unit-title">FRQ Test 2</div>
-    <div class="link-row">
-      <a href="#">Practice</a><a href="#">Solutions</a><a href="#">Exam</a>
-    </div>
-  </div>
-
-  <div class="unit-card">
-    <div class="unit-title">FRQ Test 3</div>
-    <div class="link-row">
-      <a href="#">Practice</a><a href="#">Solutions</a><a href="#">Exam</a>
-    </div>
-  </div>
-
-  <div class="unit-card">
-    <div class="unit-title">Final Review</div>
-    <div class="link-row">
-      <a href="#">Hopscotch Review</a>
-      <a href="#">Super FRQ</a>
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice</a>
+      <a href="#">Videos</a>
     </div>
   </div>
 
