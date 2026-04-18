@@ -122,6 +122,37 @@ th:nth-child(2) {
         font-size: 0.8rem;
       }
     }
+    .review-resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #d0f0c0, #fdf6f0);
+  border: 2px solid #2e7d32;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1b5e20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-card span {
+  font-size: 1rem;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  background: #b2dfdb;
+}
   </style>
 </head>
 <body class="theme-ab">
@@ -141,12 +172,24 @@ th:nth-child(2) {
   <main class="container">
     <!-- Units Table -->
 
-  <h2>Review Resources</h2>
+<h2>Review Resources</h2>
+
 <div class="review-resources">
-  <a href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf" target="_blank">📄 AB Cheat Sheet</a>
-  <a href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">🧠 What to Know by Unit</a>
-  <a href="#">🎯 You Gotta Know Flashcards</a>
-  <a href="#">📱 Online Flashcards</a>
+  <a class="review-card" href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf" target="_blank">
+    📄 <span>AB Cheat Sheet</span>
+  </a>
+
+  <a class="review-card" href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">
+    🧠 <span>What to Know by Unit</span>
+  </a>
+
+  <a class="review-card" href="#">
+    🎯 <span>You Gotta Know Flashcards</span>
+  </a>
+
+  <a class="review-card" href="#">
+    📱 <span>Online Flashcards</span>
+  </a>
 </div>
     
     <section class="resources">
@@ -303,7 +346,6 @@ th:nth-child(2) {
             <th>Practice Test & Solutions</th>
             <th>AP Exams and Solutions</th>
             <th>Additional Practice </th>
-            <th>Review Resources</th>
           </tr>
         </thead>
         <tbody>
@@ -312,7 +354,7 @@ th:nth-child(2) {
             <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/1uPqyzmDKnTDNUiW-MlKq55Aya5LrLhDl/view?usp=drive_link">Practice Test</a> | <a href="https://drive.google.com/file/d/1uOxowCJS4GXdFpsxjg8qF75eWzScndhn/view?usp=drive_link">Solutions</a></td>
             <td><a href="https://drive.google.com/file/d/1N9h0xCDt9iLky8kF86q4gZBUWl46hdFB/view?usp=drive_link">2020 Cox Practice Exam</a> | <a href="https://drive.google.com/file/d/15uUqmCnrJKUWdGVzHzgQzrSCPX5UIWVK/view?usp=drive_link">Solutions</a> </td>
             <td><a href="https://drive.google.com/file/d/1MhNmy0lGpWHwdJMn4yT15SJW79OflvQJ/view?usp=drive_link">175 Multiple Choice</a> | <a href="https://drive.google.com/file/d/1FLfh-PHKfgCPcBbGNFfGy8qJE3TAq6eF/view?usp=drive_link">Solutions</a></td>
-            <td><a href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf">AB Cheat Sheet</a></td>
+          
     
           </tr>
           <tr>
@@ -320,7 +362,7 @@ th:nth-child(2) {
             <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/134sVFXdMDchLsPXABn7RuNA5qPeGHk2G/view?usp=drive_link">Practice Test</a> | <a href="https://drive.google.com/file/d/1LPY9Y6zbJkmwhWNBbKgZ7VXSWno_wq7o/view?usp=drive_link">Solutions</a></td>
             <td><a href="https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-calculus-ab-practice-exam-2012.pdf">2012 AB Exam </a></td>
             <td><a href="https://drive.google.com/file/d/19tvxWnuPea9mhE7ZE6QmuQrQQj8hkVih/view?usp=drive_link">Unit FRQ Review</a> | <a href="https://drive.google.com/file/d/1jrsLqs8B0Xwsn2x0RGv1SztFk0MFissZ/view?usp=drive_link">Solutions</a></td>
-            <td><a href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link">What to Know from Each Unit</a></td>
+            
     
           </tr>
           <tr>
@@ -329,21 +371,21 @@ th:nth-child(2) {
             <td><a href="https://www.pcsb.org/cms/lib/FL01903687/Centricity/Domain/8620/2008ab.pdf">2008 AB Exam </a> </td>
   
             <td><a href="https://drive.google.com/file/d/1z6r7acqvwcXTNPv-Gw3Ot-c3wRHvRnHW/view?usp=drive_link"> Big 10 Review</a> | <a href="https://drive.google.com/file/d/1r-0VAWt-ACrAWqOeFsk50lfX-R1uJzUl/view?usp=drive_link">Solutions</a></td>
-            <td> You Gotta Know Flashcards</td>
+            
           </tr>
           <tr>
             <td data-label="Test">FRQ Test 5 - Topics 1.1-8.3 </td>
             <td data-label="Packet & Solutions">Practice Test | Solutions </td>
             <td><a href="https://markwaltermath.weebly.com/uploads/2/2/1/9/22190816/2003_exam_solutions.pdf">2003 AB Multiple Choice </a></td>
             <td><a href="https://drive.google.com/file/d/1O9nOsMav6nUZj8rnejdZFXJtNVHiPLfc/view?usp=drive_link">Unit 1–8 Hopscotch Review</a></td>
-            <td> Online Flashcard Practice </td>
+        
           </tr>
           <tr>
             <td data-label="Test">FRQ Test 5 - Topics 1.1-8.12 </td>
             <td data-label="Packet & Solutions">Practice Test | Solutions </td>
             <td><a href="https://drive.google.com/file/d/1ZagYgvr6K5h-TQKe5EfrbnYFypdSNr1p/view?usp=drive_link">AB Super FRQ</a> | <a href="https://drive.google.com/file/d/173StfbwufbL1ESOPI02Earfabj1vTuBI/view?usp=drive_link">Solutions</a></td>
             <td><a href="https://drive.google.com/file/d/14SVE2SVI-K2zEGCytgWZFNCiFGuBvbLy/view?usp=drive_link">Unit 1–8 Final Four Review</a></td>
-            <td><!-- empty cell to keep table aligned --></td>
+      
           </tr>
           
         </tbody>
