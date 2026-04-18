@@ -1,410 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AP Calculus BC</title>
-  <style>
-    /* ---------- Base Styles ---------- */
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #f0f7ff; /* light blue background */
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AP Calculus AB</title>
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 0;
-    }
+<style>
+/* ---------- BASE ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdf6f0;
+  margin: 0;
+  color: #000;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #1565c0; /* blue header */
-    }
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      margin-bottom: 2rem;
-      padding-left: 0;
-    }
+/* ---------- HEADER ---------- */
+header h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #1565c0; /* blue links */
-      font-weight: 600;
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
 
-    h2 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #1565c0; /* blue section headers */
-    }
+/* ---------- TITLES ---------- */
+h2 {
+  color: #2e7d32;
+  margin: 2rem 0 1rem;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-    }
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
 
-    th, td {
-      border: 2px solid #1565c0; /* blue table borders */
-      padding: 0.5rem;
-      text-align: left;
-    }
+/* ---------- BASE CARD ---------- */
+.card {
+  display: block;
+  padding: 1rem 1.2rem;
+  border: 2px solid #2e7d32;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1b5e20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.15s ease;
+}
 
-    th {
-      background-color: #cce4ff; /* light blue header background */
-      font-weight: 700;
-      color: #0d47a1; /* dark blue text */
-    }
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
 
-    a {
-      color: #1565c0;
-    }
+/* ---------- UNIT COLORS ---------- */
+.unit-card {
+  padding: 1.2rem;
+  border-radius: 14px;
+  border: 2px solid #2e7d32;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  color: #1b5e20;
+  font-weight: 600;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+/* individual colors */
+/* ---------- UNIT COLORS (rebalanced) ---------- */
 
-    /* ---------- Responsive Styles ---------- */
-    @media (max-width: 1024px) {
-      nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      table {
-        font-size: 0.9rem;
-      }
-    }
+/* 1–16 (balanced alternating palette) */
+.u1  { background: #4dabf7; }  /* blue */
+.u2  { background: #ff6b6b; }  /* red */
+.u3  { background: #51cf66; }  /* green */
+.u4  { background: #ffd43b; }  /* yellow */
+.u5  { background: #9775fa; }  /* purple */
+.u6  { background: #ffa94d; }  /* orange */
+.u7  { background: #38d9a9; }  /* teal */
+.u8  { background: #f06595; }  /* pink */
 
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav a {
-        font-size: 1.1rem;
-      }
-      table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      th, td {
-        padding: 0.4rem 0.6rem;
-      }
-    }
+.u9  { background: #74c0fc; }  /* light blue */
+.u10 { background: #ff8787; }  /* soft red */
+.u11 { background: #69db7c; }  /* light green */
+.u12 { background: #ffe066; }  /* soft yellow */
+.u13 { background: #b197fc; }  /* soft purple */
+.u14 { background: #ffc078; }  /* peach */
+.u15 { background: #66d9e8; }  /* cyan */
+.u16 { background: #fab005; }  /* golden */
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-        padding: 0.5rem 0;
-      }
-      table {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+/* 17–20 (very soft pastels) */
+.u17 { background: #d0ebff; }  /* very light blue */
+.u18 { background: #f3d9fa; }  /* soft lavender */
+.u19 { background: #fff3bf; }  /* pale amber */
+.u20 { background: #d3f9d8; }  /* very soft mint */
+.u21  { background: #4dabf7; }  /* blue */
+.u22  { background: #ff6b6b; }  /* red */
+.u23  { background: #51cf66; }  /* green */
+.u24  { background: #ffd43b; }  /* yellow */
+/* ---------- UNIT TITLE ---------- */
+.unit-title {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- LINKS INSIDE CARDS ---------- */
+.link-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 0.5rem;
+}
+
+.link-row a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #2e7d32;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  color: #1b5e20;
+  background: rgba(255,255,255,0.4);
+}
+
+.link-row a:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+/* ---------- REVIEW CARDS ---------- */
+
+
+/* ---------- HOVER LIFT ---------- */
+.card:hover,
+.unit-card:hover {
+  transform: translateY(-3px);
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1>AP Calculus BC</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ab.html">AP Calculus AB</a></li>
-          <li><a href="bc.html">AP Calculus BC</a></li>
-        </ul>
-      </nav>
+
+<header>
+  <div class="container">
+    <h1>AP Calculus AB</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ab.html">AP Calculus AB</a></li>
+        <li><a href="bc.html">AP Calculus BC</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ================= REVIEW ================= -->
+<h2>Important Resources</h2>
+<div class="grid">
+
+  <a class="card review-card u16" href="#">
+     You Gotta Know Flashcards
+  </a>
+
+  <a class="card review-card u17" href="#">
+     Online Flashcard Practice
+  </a>
+  
+  <a class="card review-card u18" href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">
+     What to Know by Unit
+  </a>
+  
+  <a class="card review-card u19" href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf" target="_blank">
+    BC Cheat Sheet
+  </a>
+
+</div>
+
+<!-- ================= UNITS ================= -->
+<h2>AB Units</h2>
+<div class="grid">
+
+  <div class="unit-card u1">
+    <div class="unit-title">Unit 1 - Limits and Continuity</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
     </div>
-  </header>
-  <main class="container">
-    <!-- Units Table -->
-    <section class="resources">
-      <h2>BC Units</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Unit</th>
-            <th>Packet & Solutions</th>
-            <th>Homework & Solutions</th>
-            <th>Videos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Unit">Unit 1 - Limits and Continuity</td>
-            <td data-label="Packet & Solutions">
-              <a href="https://drive.google.com/file/d/1oO-4pF8jWp01CiiBXM5dNNoRsyEIOrnF/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-              <a href="https://drive.google.com/file/d/1qCv7B5RZL7tdCOzeVGLjE3aQ0qgPQMGq/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-            </td>
-            <td data-label="Homework & Solutions">
-              <a href="https://drive.google.com/file/d/1CSa1knz38n4oUJMsm5cM_SdrR92XdJRd/view?usp=drive_link">Homework</a>
-            </td>
-            <td data-label="Videos">
-              <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWceAGi1vKuXTXlc_GkIW7OIO" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-              <a href="https://www.youtube.com/watch?v=xhKf7v2FU_g" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-            </td>
-          </tr>
-          <tr>
-  <td data-label="Unit">Unit 2 - Differentiation and Basic Rules</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1X2WITB3BGDZWR4bf2xcgqpG8HdeYj3yU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1bcY4kR9tAIq6unkqMyj_gRmSvzER9N-w/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1QuCLi9YDJThUNNm0uhr22KDQCACtTw0e/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWcfglyGBZU8QK3e_4XkGiqY-" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=1_WNBRS2cVg" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 3 - Derivatives of Composite Functions and Inverses</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1-LaJxG7tonA0iMJErwEdFzznkGhWs5Fx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1h_PdUjh2p0RU-bE8U7VlJsN-bL306klk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1QuCLi9YDJThUNNm0uhr22KDQCACtTw0e/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWcdKHyJZAyKEEud_-G-rDyjW" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=MftbWpwHLRI" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u2">
+    <div class="unit-title">Unit 2 - Differentiation</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 4 - Contextual Applications of Derivatives</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1TsuMW38hlG9LQO1ihtEPnsemsopDO323/view?usp=drive_link">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1_0QwQf24zcDcnD1ONggwtwIWaFjdFCWj/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1ogYC_InvwSXaCUtEFVWC2_Ab1P3UajQv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWcdLw5vOJOeNwa2PxsWUkICd" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=Fvg6DIpi0LE" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u3">
+    <div class="unit-title">Unit 3 - Derivatives - Composite Functions</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 5 – Analytical Applications of Derivatives</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1Ipj36p9I-nkQVhqW7pDxz0hJ_EO_qW7G/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1_1jLqUJQzcamj17HmLdIimJWpN3gZml9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/183djyD24rs9FuMSoA7FO87wfl5fJJ4Kn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/watch?v=1Hz2h-AAeM8&list=PLxRSX8UqzWccPUnMBBYdxe2v55eOgQxuj" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=vvwo8VFhDkE" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u4">
+    <div class="unit-title">Unit 4 - Applications of Derivatives</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 6 – Integration and Accumulation of Change</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1myKzGcqOMSQHnt7ty6ybHbDpmCV1yilo/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1FBL6z940a2vEjk3hn9On6Q0lbeE8Ds3i/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/13t3rUyv92jvBrUQEyW1pKJ2VzstqG3V6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/watch?v=cgDBFQ9GkZw&list=PLxRSX8UqzWcegddqpyKxPAzoHvk5pgldg" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=PTmqdPxxdGs" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u5">
+    <div class="unit-title">Unit 5 - Derivative Analysis</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 7 – Differential Equations</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1NlGaQOBFJXpoivQUECrhHnX0FSLnBk-V/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1orALuwmvAN-5XUPUDE3coeHPcoQrG7Pf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1D1nG6HRcVfDEKmVUOPKRgswaSc7hP1CO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWcfPBOfC_I1rWVN87eoPp6Ta" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=RMYYxOnLgQo" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u6">
+    <div class="unit-title">Unit 6 - Integration</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 8 – Applications of Integration</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1v64rWExXQj11GOo6ouYzyTVJdavouFR-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/11WX072mtgepMZcbuW18MahkImi4YnQ9s/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1IWt5ielMqyr6bUNMIhdZeVMpohl6WjBg/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=yUWCrbChtAI" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u7">
+    <div class="unit-title">Unit 7 - Differential Equations</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 9 – Parametric and Polar Functions </td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1xB80DG1YQkHXGag-JmMIitPxVPYHsVBI/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1x6IOeGN6U7CHpTZBCOdPL_sGMif0xKe-/view?usp=drive_link" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1dJ5oxnVL1ttQK55tV6fCEXv6kBKGWmu5/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWcdl-SdkB2e5naj78cQDJ2uZ" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=or54t799MNw" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u8">
+    <div class="unit-title">Unit 8 - Applications of Integration</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
+  
+  <div class="unit-card u21">
+    <div class="unit-title">Unit 9 - Parametric and Polar</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
+  
+  <div class="unit-card u22">
+    <div class="unit-title">Unit 10A - Series and Convergence Tests</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
+  
+  <div class="unit-card u23">
+    <div class="unit-title">Unit 10B - Taylor Series</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
+  
+  <div class="unit-card u24">
+    <div class="unit-title">Unit C - Calculator Skills</div>
+    <div class="link-row">
+      <a href="#">Packet</a>
+      <a href="#">Solutions</a>
+      <a href="#">Practice Problems</a>
+      <a href="#">Practice Solutions</a>
+      <a href="#">Videos by topic</a>
+      <a href="#">Unit Review Video</a>
+    </div>
+  </div>
+</div>
+  <h2>AB Practice Test Materials </h2>
+<div class="grid">
 
-<tr>
-  <td data-label="Unit">Unit 10A – Infinite Series</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1GWQbaZuECy1htGKnxNhn2Mix8FF9HCP2/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1IhMERakyDlMQMheI2hXbrhlqAED8rrqq/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1iOWAm-bCajMUNDXLerZnula4Q_HC0yMM/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/watch?v=cr8QcflluF0&list=PLxRSX8UqzWcfHZ4kGyvTYrdEFw-RhcWJI" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=VZs81fFXnnQ" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
+  <div class="unit-card u9">
+    <div class="unit-title">FRQ Test 1</div>
+    <div class="link-row">
+      <a href="#">Practice Test</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
 
-<tr>
-  <td data-label="Unit">Unit 10B – Taylor Polynomials and Power Series</td>
-  <td data-label="Packet & Solutions">
-    <a href="https://drive.google.com/file/d/1sXWXLaRGx1uMfkvuogs3MvvKmkBBK1nd/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Packet</a> | 
-    <a href="https://drive.google.com/file/d/1jmgg1msixx3hdjfwxuq-I537DAc5PDqv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Solutions</a>
-  </td>
-  <td data-label="Homework & Solutions">
-    <a href="https://drive.google.com/file/d/1cncPRn8SDpA2wVlDYyYElSKRnaiOc85U/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Homework</a>
-  </td>
-  <td data-label="Videos">
-    <a href="https://www.youtube.com/watch?v=cr8QcflluF0&list=PLxRSX8UqzWcfHZ4kGyvTYrdEFw-RhcWJI" target="_blank" rel="noopener noreferrer">Videos By Lesson</a> | 
-    <a href="https://www.youtube.com/watch?v=VZs81fFXnnQ" target="_blank" rel="noopener noreferrer">Unit Video Review</a>
-  </td>
-</tr>
-            <td data-label="Unit">Unit C - Calculator Skills</td>
-            <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/1pQ6Tx28XaP7O--FAON1B2RGzZ5shOjEa/view?usp=drive_link">Packet</a> | <a href="https://drive.google.com/file/d/1yw_z0GBcsgrFZooZCVuoUAkpQUjRGgst/view?usp=drive_link">Solutions</a></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="unit-card u10">
+    <div class="unit-title">FRQ Test 2</div>
+    <div class="link-row">
+      <a href="#">Practice Test</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
 
-     <!-- Practice Tests Table -->
-      <h2>Practice Tests</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Marking Period</th>
-            <th>Practice Test & Solutions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Test">Semester 1 - Marking Period 1 - Topics 1.1-3.6 </td>
-            <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/1cOblvapLfZyFyxsyg5xH3pI1eoPuytEI/view?usp=drive_link">Practice Test</a> | <a href="https://drive.google.com/file/d/1cTpAx7pjP8ILpp_Tl96G_-ZnASwCQBq_/view?usp=drive_link">Solutions</a></td>
-            
-          </tr>
-          <tr>
-            <td data-label="Test">Semester 1 - Marking Period 2 - Topics 1.1-6.6</td>
-            <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/1IEUfyV-76fHrnpcc_l3PCHwTRrWj0Eul/view?usp=drive_link">Practice Test</a> | <a href="https://drive.google.com/file/d/1StVDscCo1k5BDvUs916jxcZQ6ZFoJK5C/view?usp=drive_link">Solutions</a></td>
-            
-          </tr>
-          <tr>
-            <td data-label="Test">Semester 1 - Marking Period 3 - Topics 1.1-7.9 </td>
-            <td data-label="Packet & Solutions"><a href="https://drive.google.com/file/d/1x2PSYZ41u-d3yAwNR2YQSWFMG8EVBbBc/view?usp=drive_link">Practice Test</a> | Solutions </td>
-            
-          </tr>
-          <tr>
-            <td data-label="Test">Semester 2 - Marking Period 1 - Topics 1.1-9.9 </td>
-            <td data-label="Packet & Solutions">Practice Test | Solutions </td>
-            
-          </tr>
-        </tbody>
-      </table>
+  <div class="unit-card u11">
+    <div class="unit-title">FRQ Test 3</div>
+    <div class="link-row">
+      <a href="#">Practice Test</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
 
-      <h2>AP Exam Prep</h2>
-<table>
-  <thead>
-    <tr>
-      <th>FRQ Review</th>
-      <th>Practice Exams and Solutions</th>
-      <th>AB Practice Problems </th>
-      <th>Review Resources</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2023 FRQ Review 1-3 | Solutions</td>
-      <td><a href="https://drive.google.com/file/d/1N9h0xCDt9iLky8kF86q4gZBUWl46hdFB/view?usp=drive_link">2020 AB Cox Practice Exam</a> | <a href="https://drive.google.com/file/d/15uUqmCnrJKUWdGVzHzgQzrSCPX5UIWVK/view?usp=drive_link">MC Solutions</a> | <a href="https://drive.google.com/file/d/1bXbJl4AV_8EkpJt91iLZg7zHVRBdjeYb/view?usp=drive_link">FRQ Solutions</a> </td>
-      <td><a href="https://drive.google.com/file/d/1MhNmy0lGpWHwdJMn4yT15SJW79OflvQJ/view?usp=drive_link">175 Multiple Choice</a> | <a href="https://drive.google.com/file/d/1FLfh-PHKfgCPcBbGNFfGy8qJE3TAq6eF/view?usp=drive_link">Solutions</a></td>
-      <td><a href="https://www.ahschools.us/cms/lib/MN01909485/Centricity/Domain/4851/BC%20Calc%20Memorization%20Sheet.pdf">BC Cheat Sheet</a></td>
-    </tr>
+  <div class="unit-card u12">
+    <div class="unit-title">FRQ Test 4</div>
+    <div class="link-row">
+      <a href="#">Practice Test</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
+</div>
+  
+  <h2>AP Exam Review Materials </h2>
+<div class="grid">
 
-    <tr>
-      <td>2023 FRQ Review 4-6 | Solutions</td>
-      <td><a href="https://apcentral.collegeboard.org/media/pdf/ap-calculus-bc-practice-exam-2012.pdf">2012 BC Exam (Solutions Included)</a></td>
-      <td><a href="https://drive.google.com/file/d/19tvxWnuPea9mhE7ZE6QmuQrQQj8hkVih/view?usp=drive_link">Unit 1–8 FRQ Review</a> | <a href="https://drive.google.com/file/d/1jrsLqs8B0Xwsn2x0RGv1SztFk0MFissZ/view?usp=drive_link">Solutions</a></td>
+  <div class="unit-card u13">
+    <div class="unit-title">AP Exam FRQ</div>
+    <div class="link-row">
+      <a href="#">AP FRQ Problems</a>
+      <a href="#">AP Scoring Guidelines</a>
+      <a href="#"> Cox FRQ Review AB</a>
+      <a href="#"> Cox FRQ Solutions</a>
+      <a href="#"> Super FRQ AB Review</a>
+      <a href="#"> Super FRQ Solutions</a>
+    </div>
+  </div>
+
+  <div class="unit-card u14">
+    <div class="unit-title">AP Exam MC</div>
+    <div class="link-row">
+      <a href="#">2022 Cox MC</a>
+      <a href="#">2022 Solutions</a>
+      <a href="#">2012 MC</a>
+      <a href="#">2012 Solutions</a>
+      <a href="#">175 MC by Unit AB</a>
+      <a href="#">175 MC Solutions</a>
       
-      <td><a href="https://cdnsm5-ss4.sharpschool.com/UserFiles/Servers/Server_67081/File/AP%20Cal%20AB%20Formula%20Sheet.pdf">AB Cheat Sheet</a></td>
-    </tr>
+    </div>
+  </div>
 
-    <tr>
-      <td>2024 FRQ Review 1-3 | Solutions</td>
-      <td><a href="https://markwaltermath.weebly.com/uploads/2/2/1/9/22190816/2003_exam_solutions.pdf">2022 BC Cox Practice Exam</a> | <a href="https://drive.google.com/file/d/1KuMka4N4b1bk0LTWSN2gOrRe7nGbn-8T/view?usp=drive_link">Solutions</a></td>
-      <td><a href="https://drive.google.com/file/d/1z6r7acqvwcXTNPv-Gw3Ot-c3wRHvRnHW/view?usp=drive_link">Unit 1–8 Big 10 Review</a> | <a href="https://drive.google.com/file/d/1r-0VAWt-ACrAWqOeFsk50lfX-R1uJzUl/view?usp=drive_link">Solutions</a></td>
-      
-      <td><a href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link">What to Know from AB</a></td>
-    </tr>
-    <tr>
-      <td>2024 FRQ Review 4-6 | Solutions</td>
-      <td><a href="https://pchscalculus.weebly.com/uploads/8/1/8/4/81840438/2003_bc_mc.pdf">2003 BC MC </a> | <a href="https://www.mrfelling.com/docs/apcalcbc/2003MCQ-answers.pdf">Solutions</a></td>
-      <td><a href="https://drive.google.com/file/d/1O9nOsMav6nUZj8rnejdZFXJtNVHiPLfc/view?usp=drive_link">Unit 1–8 Hopscotch Review</a></td>
-      <td><!-- empty cell to keep table aligned --></td>
-    </tr>
-    <tr>
-      <td>2025 FRQ Review 1-3 | Solutions</td>
-      <td><a href="https://drive.google.com/file/d/1ZagYgvr6K5h-TQKe5EfrbnYFypdSNr1p/view?usp=drive_link">AB Super FRQ</a> | <a href="https://drive.google.com/file/d/173StfbwufbL1ESOPI02Earfabj1vTuBI/view?usp=drive_link">Solutions</a></td>
-      <td><a href="https://drive.google.com/file/d/14SVE2SVI-K2zEGCytgWZFNCiFGuBvbLy/view?usp=drive_link">Unit 1–8 Final Four Review</a></td>
-      <td><!-- empty cell to keep table aligned --></td>
-    </tr>
-    <tr>
-      <td>2025 FRQ Review 4-6 | Solutions</td>
-      <td> <a href="https://drive.google.com/file/d/1vNk4EkB-Nc6cZEYPeDdGPF052uF4SfDG/view?usp=drive_link">DV Mock Exam </a> </td>
-      <td><!-- empty cell to keep table aligned --></td>
-      <td><!-- empty cell to keep table aligned --></td>
-    </tr>
-  </tbody>
-</table>
+  <div class="unit-card u15">
+    <div class="unit-title">Practice Problems</div>
+    <div class="link-row">
+      <a href="#">AB Big 10 Review</a>
+      <a href="#">Big 10 Solutions</a>
+      <a href="#">AB Hopscotch Review</a>
+      <a href="#">AB Final Four Review</a>
+    </div>
+  </div>
 
-    </section>
-  </main>
+  
+    </div>
+  </div>
+</div>
+</div>
+
+</main>
 
 </body>
 </html>
