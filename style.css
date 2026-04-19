@@ -209,3 +209,23 @@ footer {
   border: 12px solid #000;
   background-color: #fff;
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 100px; /* slightly smaller on mobile */
+  }
+
+  .header h1 {
+    position: static; /* important if you used absolute centering */
+    transform: none;
+    text-align: center;
+    width: 100%;
+  }
+}
