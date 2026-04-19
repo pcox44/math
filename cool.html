@@ -6,182 +6,200 @@
 <title>Cool Math Stuff</title>
 
 <style>
+
 /* ---------- BASE ---------- */
 body {
   font-family: 'Poppins', sans-serif;
-  background: #eaf4ff;
+  background: #fff5f5;
   margin: 0;
-  color: #000;
+  color: #2b2b2b;
 }
 
 /* ---------- CONTAINER ---------- */
 .container {
   width: 92%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding-bottom: 3rem; /* bottom spacing */
 }
 
 /* ---------- HEADER ---------- */
 header {
+  background: #d64541;
+  color: white;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 2rem 1rem;
 }
 
 header h1 {
-  color: #1e66d0;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  font-size: 2.8rem;
 }
 
+/* ---------- NAV ---------- */
 nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 nav a {
-  color: #1e66d0;
-  font-weight: 600;
+  color: white;
   text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- TITLE ---------- */
 h2 {
-  color: #1e66d0;
   text-align: center;
-  margin-bottom: 2rem;
+  color: #c92a2a;
+  margin: 2rem 0;
 }
 
 /* ---------- GRID ---------- */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 /* ---------- CARD ---------- */
 .card {
-  display: block;
-  padding: 1.2rem;
-  border-radius: 14px;
-  border: 2px solid #2e7d32;
-  background: #ffffff;
-  text-decoration: none;
-  color: #1b5e20;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: 0.15s ease;
+  background: white;
+  border-radius: 12px;
+  padding: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
-.card-title {
+/* ---------- BUTTON ---------- */
+.card button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  color: white;
+  background: #e03131;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.card button:hover {
+  background: #c92a2a;
+}
+
+/* ---------- TEXT ---------- */
 .card p {
-  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
 }
 
-/* subtle alternating colors */
-.card:nth-child(odd) {
-  background: #f8fbff;
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
 }
 
-.card:nth-child(even) {
-  background: #eef6ff;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <h1>Cool Math Stuff</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-      </ul>
-    </nav>
-  </div>
+  <h1>Cool Math Stuff</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ab.html">AP Calculus AB</a></li>
+      <li><a href="bc.html">AP Calculus BC</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main class="container">
 
 <h2>Fun Math Projects</h2>
 
-<section class="projects">
+<div class="projects">
 
-  <a class="card" href="https://qu0x.com" target="_blank">
-    <div class="card-title">Qu0x</div>
-    <p>Use 5 numbers and math operations to reach a target number.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
+    <p>Use 5 numbers and operations to hit a target.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/uniform-sum" target="_blank">
-    <div class="card-title">Stick Simulation</div>
-    <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
+    <p>Expected draws to reach a sum.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/ants" target="_blank">
-    <div class="card-title">Ants on Polygons</div>
-    <p>Random walk simulation on a closed polygonal path.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
+    <p>Random walk on a polygon.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/schur" target="_blank">
-    <div class="card-title">Schur Colorings</div>
-    <p>Try to maximize Schur numbers through coloring strategies.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
+    <p>Color to avoid sums.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/porta-potty" target="_blank">
-    <div class="card-title">Picking a Porta-Potty</div>
-    <p>Apply the secretary problem concept in a fun new context.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Porta-Potty</button>
+    <p>Secretary problem twist.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/pokemon" target="_blank">
-    <div class="card-title">Catching All Pokémon</div>
-    <p>A Coupon Collector Problem simulation themed with Pokémon.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Pokemon</button>
+    <p>Coupon collector simulation.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/buffon" target="_blank">
-    <div class="card-title">Buffon's Needle</div>
-    <p>Estimate π using a needle-drop simulation.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
+    <p>Estimate π with randomness.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/mathdance" target="_blank">
-    <div class="card-title">Math Dance</div>
-    <p>Visualize number mappings as animated patterns.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
+    <p>Animated number patterns.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/colors" target="_blank">
-    <div class="card-title">Coloring with Numbers</div>
-    <p>Color the screen based on number properties.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring Numbers</button>
+    <p>Color based on number properties.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/life" target="_blank">
-    <div class="card-title">Game of Life</div>
-    <p>Simulate Conway's Game of Life.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/life','_blank')">Game of Life</button>
+    <p>Cellular automaton simulation.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/barnsley" target="_blank">
-    <div class="card-title">Barnsley Fern</div>
-    <p>Generate a classic fractal using iteration.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/barnsley','_blank')">Barnsley Fern</button>
+    <p>Fractal generator.</p>
+  </div>
 
-  <a class="card" href="https://pcox44.github.io/floor" target="_blank">
-    <div class="card-title">Quotient Floor</div>
-    <p>Explore patterns from floor division.</p>
-  </a>
+  <div class="card">
+    <button onclick="window.open('https://pcox44.github.io/floor','_blank')">Quotient Floor</button>
+    <p>Patterns from floor division.</p>
+  </div>
 
-</section>
+</div>
 
 </main>
 
