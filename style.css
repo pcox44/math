@@ -8,12 +8,12 @@
 }
 
 /* --------------------------------------------------
-   BASE BODY (NOW LAVENDER)
+   BASE BODY
 -------------------------------------------------- */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background-color: #f3e8ff; /* soft lavender */
+  background-color: #DCD6FF; /* lavender */
   color: #000;
 }
 
@@ -36,10 +36,9 @@ header {
   grid-template-columns: 2fr 1fr;
 }
 
-/* 🟠 CHANGED: soft orange header */
 header h1 {
-  background-color: #ffd8a8; /* soft orange */
-  color: #000;
+  background-color: #000;   /* BLACK */
+  color: #fff;              /* WHITE TEXT */
   padding: 2rem;
   font-size: 2.8rem;
   font-weight: 700;
@@ -48,7 +47,7 @@ header h1 {
 }
 
 /* --------------------------------------------------
-   NAVIGATION
+   NAVIGATION (default)
 -------------------------------------------------- */
 nav ul {
   display: grid;
@@ -122,12 +121,11 @@ footer {
 -------------------------------------------------- */
 .theme-mondrian header {
   border: 12px solid #000;
-  grid-template-columns: 2fr 1fr;
 }
 
 .theme-mondrian header h1 {
-  background-color: #ffd8a8; /* matches your new orange */
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 /* NAV COLORS */
@@ -152,7 +150,7 @@ footer {
 }
 
 /* --------------------------------------------------
-   AB THEME (soft green)
+   AB THEME
 -------------------------------------------------- */
 .theme-ab header h1 {
   background-color: #8ce99a;
@@ -165,24 +163,8 @@ footer {
   border: 6px solid #000;
 }
 
-.theme-ab nav li a:hover {
-  background-color: #69db7c;
-}
-
-.theme-ab h2 {
-  border-left: 6px solid #69db7c;
-}
-
-.theme-ab thead {
-  background-color: #b2f2bb;
-}
-
-.theme-ab tbody tr:hover {
-  background-color: #e6fcf5;
-}
-
 /* --------------------------------------------------
-   BC THEME (soft blue)
+   BC THEME
 -------------------------------------------------- */
 .theme-bc header h1 {
   background-color: #a5d8ff;
@@ -193,20 +175,4 @@ footer {
   background-color: #339af0;
   color: #fff;
   border: 6px solid #000;
-}
-
-.theme-bc nav li a:hover {
-  background-color: #74c0fc;
-}
-
-.theme-bc h2 {
-  border-left: 6px solid #74c0fc;
-}
-
-.theme-bc thead {
-  background-color: #e7f5ff;
-}
-
-.theme-bc tbody tr:hover {
-  background-color: #d0ebff;
 }
