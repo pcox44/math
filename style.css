@@ -26,7 +26,7 @@ body {
 }
 
 /* --------------------------------------------------
-   HEADER
+   DEFAULT HEADER (fallback if no theme applied)
 -------------------------------------------------- */
 header {
   padding: 0;
@@ -37,7 +37,8 @@ header {
 }
 
 header h1 {
-  color: #fff;
+  background-color: #f1f3f5;
+  color: #343a40;
   padding: 2rem;
   font-size: 2.8rem;
   font-weight: 700;
@@ -46,7 +47,7 @@ header h1 {
 }
 
 /* --------------------------------------------------
-   NAVIGATION
+   NAVIGATION (default)
 -------------------------------------------------- */
 nav ul {
   display: grid;
@@ -64,6 +65,8 @@ nav li a {
   border: 6px solid #000;
   text-decoration: none;
   transition: 0.2s ease;
+  background: #fff;
+  color: #000;
 }
 
 nav li a:hover {
@@ -71,32 +74,15 @@ nav li a:hover {
 }
 
 /* --------------------------------------------------
-   SECTION HEADINGS
+   HEADINGS
 -------------------------------------------------- */
 h2 {
   background-color: #fff;
   border: 4px solid #000;
   padding: 1rem;
   font-size: 1.8rem;
-  display: flex;
-  align-items: center;
   margin-top: 3rem;
   font-weight: 700;
-}
-
-h2::before {
-  content: "";
-  display: inline-block;
-  width: 25px;
-  height: 100%;
-  margin-right: 10px;
-}
-
-h2::after {
-  content: "";
-  flex-grow: 1;
-  height: 10px;
-  margin-left: 10px;
 }
 
 /* --------------------------------------------------
@@ -110,56 +96,32 @@ table {
   margin-bottom: 2rem;
 }
 
-thead {
-  border-bottom: 4px solid #000;
-}
-
-thead th {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 700;
-  border: 3px solid #000;
-}
-
+thead th,
 tbody td {
-  padding: 0.8rem 1rem;
+  padding: 1rem;
   border: 3px solid #000;
-  vertical-align: top;
-}
-
-tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-table a {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-table a:hover {
-  text-decoration: underline;
 }
 
 /* --------------------------------------------------
-   FOOTER
+   FOOTER (default)
 -------------------------------------------------- */
 footer {
   text-align: center;
   font-weight: 700;
   padding: 2rem;
   border-top: 6px solid #000;
-  border-radius: 0;
 }
 
 /* ==================================================
-   THEMES — Bold Homepage & Soft AB/BC
+   THEMES
 ================================================== */
 
 /* --------------------------------------------------
-   HOMEPAGE — Bold Mondrian Colors
+   HOMEPAGE (MONDRIAN)
 -------------------------------------------------- */
 .theme-mondrian header {
-  border: 12px solid #000; /* bold black lines */
+  border: 12px solid #000;
+  grid-template-columns: 2fr 1fr;
 }
 
 .theme-mondrian header h1 {
@@ -167,98 +129,83 @@ footer {
   color: #343a40;
 }
 
-.theme-mondrian nav li a {
-  display: block;
-  font-weight: 700;
-  text-align: center;
-  padding: 2rem 0;
-  border: 12px solid #000; /* thick black lines */
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: 0.2s ease;
+/* NAV COLORS (ONLY homepage) */
+.theme-mondrian nav li:nth-child(1) a {
+  background-color: #ffd700; /* yellow */
+  color: #000;
 }
 
-/* Primary colors for the three buttons */
-.theme-mondrian nav li:nth-child(1) a { background-color: #ffd700; color: #000; } /* AB = yellow */
-.theme-mondrian nav li:nth-child(2) a { background-color: #0047ab; color: #fff; } /* BC = blue */
-.theme-mondrian nav li:nth-child(3) a { background-color: #ff0000; color: #fff; } /* Cool Math Stuff = red */
-
-.theme-mondrian nav li a:hover {
-  filter: brightness(1.1);
-}
-
-footer.theme-mondrian {
+.theme-mondrian nav li:nth-child(2) a {
   background-color: #0047ab; /* blue */
   color: #fff;
-  border-top: 12px solid #000;
 }
 
-h2.theme-mondrian::before { background-color: #ff0000; border-right: 8px solid #000; }
-h2.theme-mondrian::after  { background-color: #0047ab; border-top: 8px solid #000; }
-table.theme-mondrian thead { background-color: #ffd700; }
-
-/* --------------------------------------------------
-   AB PAGE — Soft Green Theme (original style)
--------------------------------------------------- */
-.theme-ab header {
-  background-color: #8ce99a; /* soft green */
-}
-.theme-ab nav a {
-  background-color: #40c057; /* green nav buttons */
+.theme-mondrian nav li:nth-child(3) a {
+  background-color: #ff0000; /* red */
   color: #fff;
 }
-.theme-ab nav a:hover {
-  background-color: #69db7c;
+
+.theme-mondrian nav li:nth-child(4) a {
+  background-color: #000; /* cool math stuff */
+  color: #fff;
 }
-.theme-ab h2 {
-  border-left: 6px solid #69db7c;
-}
-.theme-ab thead {
-  background-color: #b2f2bb;
-}
-.theme-ab tbody tr:hover {
-  background-color: #e6fcf5;
-}
-.theme-ab table a {
-  color: #2f9e44;
-}
-.theme-ab table a:hover {
-  color: #1b7a35;
-}
-.theme-ab footer {
+
+/* --------------------------------------------------
+   AB THEME (soft green)
+-------------------------------------------------- */
+.theme-ab header h1 {
   background-color: #8ce99a;
   color: #000;
 }
 
-/* --------------------------------------------------
-   BC PAGE — Soft Blue Theme (original style)
--------------------------------------------------- */
-.theme-bc header {
-  background-color: #a5d8ff; /* soft blue */
-}
-.theme-bc nav a {
-  background-color: #339af0; /* blue nav buttons */
+.theme-ab nav li a {
+  background-color: #40c057;
   color: #fff;
+  border: 6px solid #000;
 }
-.theme-bc nav a:hover {
+
+.theme-ab nav li a:hover {
+  background-color: #69db7c;
+}
+
+.theme-ab h2 {
+  border-left: 6px solid #69db7c;
+}
+
+.theme-ab thead {
+  background-color: #b2f2bb;
+}
+
+.theme-ab tbody tr:hover {
+  background-color: #e6fcf5;
+}
+
+/* --------------------------------------------------
+   BC THEME (soft blue)
+-------------------------------------------------- */
+.theme-bc header h1 {
+  background-color: #a5d8ff;
+  color: #000;
+}
+
+.theme-bc nav li a {
+  background-color: #339af0;
+  color: #fff;
+  border: 6px solid #000;
+}
+
+.theme-bc nav li a:hover {
   background-color: #74c0fc;
 }
+
 .theme-bc h2 {
   border-left: 6px solid #74c0fc;
 }
+
 .theme-bc thead {
   background-color: #e7f5ff;
 }
+
 .theme-bc tbody tr:hover {
   background-color: #d0ebff;
-}
-.theme-bc table a {
-  color: #339af0;
-}
-.theme-bc table a:hover {
-  color: #1c7ed6;
-}
-.theme-bc footer {
-  background-color: #a5d8ff;
-  color: #000;
 }
