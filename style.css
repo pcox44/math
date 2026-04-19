@@ -176,3 +176,29 @@ footer {
   color: #fff;
   border: 6px solid #000;
 }
+
+/* --------------------------------------------------
+   HEADER (Mondrian Style)
+-------------------------------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 12px solid #000;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  background-color: #f1f3f5;
+  color: #343a40;
+  padding: 1rem 0;
+  font-weight: 700;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
