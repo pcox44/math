@@ -163,9 +163,8 @@ footer {
 }
 
 .theme-mondrian header h1 {
-  background-color: #ff0000; /* red */
-  color: #fff;
-  border-bottom: 12px solid #000;
+  background-color: #f1f3f5;
+  color: #343a40;
 }
 
 .theme-mondrian nav li a {
