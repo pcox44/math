@@ -1,175 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algebra 2</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fdf6f0;
-      color: #333;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AP Calculus AB</title>
 
-    header {
-      background-color: #4a90e2;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+<style>
+/* ---------- BASE ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdf6f0;
+  margin: 0;
+  color: #000;
+}
 
-    header h1 {
-      font-size: 2rem;
-    }
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 2 0;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-      margin-top: 0.5rem;
-    }
+/* ---------- HEADER ---------- */
+header h1 {
+  text-align: center;
+  color: #c92a2a;
+  margin-bottom: 0.5rem;
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a {
+  color: #c92a2a;
+  font-weight: 600;
+  text-decoration: none;
+}
 
-    h2 {
-      color: #4a90e2;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+/* ---------- TITLES ---------- */
+h2 {
+  color: #c92a2a;
+  margin: 2rem 0 1rem;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 3rem;
-    }
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.75rem;
-      text-align: center;
-    }
+/* ---------- BASE CARD ---------- */
+.card {
+  display: block;
+  padding: 1rem 1.2rem;
+  border: 2px solid #c92a2a;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1b5e20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.15s ease;
+}
 
-    th {
-      background-color: #4a90e2;
-      color: #fff;
-    }
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
 
-    td a {
-      text-decoration: none;
-      color: #4a90e2;
-      font-weight: 500;
-    }
+  
+/* ---------- UNIT COLORS ---------- */
+.unit-card {
+  padding: 1.2rem;
+  border-radius: 14px;
+  border: 2px solid #c92a2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  color: #1b5e20;
+  font-weight: 600;
+}
 
-    td a:hover {
-      text-decoration: underline;
-    }
+/* individual colors */
+/* ---------- UNIT COLORS (rebalanced) ---------- */
 
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: #f0f0f0;
-      font-size: 0.95rem;
-      color: #666;
-      margin-top: 3rem;
-    }
+/* 1–16 (balanced alternating palette) */
+.u1  { background: #4dabf7; }  /* blue */
+.u2  { background: #ff6b6b; }  /* red */
+.u3  { background: #51cf66; }  /* green */
+.u4  { background: #ffd43b; }  /* yellow */
+.u5  { background: #9775fa; }  /* purple */
+.u6  { background: #ffa94d; }  /* orange */
+.u7  { background: #38d9a9; }  /* teal */
+.u8  { background: #f06595; }  /* pink */
 
-    @media (max-width: 768px) {
-      th, td {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+.u9  { background: #74c0fc; }  /* light blue */
+.u10 { background: #ff8787; }  /* soft red */
+.u11 { background: #69db7c; }  /* light green */
+.u12 { background: #ffe066; }  /* soft yellow */
+.u13 { background: #b197fc; }  /* soft purple */
+.u14 { background: #ffc078; }  /* peach */
+.u15 { background: #66d9e8; }  /* cyan */
+.u16 { background: #fab005; }  /* golden */
+
+/* 17–20 (very soft pastels) */
+.u17 { background: #d0ebff; }  /* very light blue */
+.u18 { background: #f3d9fa; }  /* soft lavender */
+.u19 { background: #fff3bf; }  /* pale amber */
+.u20 { background: #d3f9d8; }  /* very soft mint */
+/* ---------- UNIT TITLE ---------- */
+.unit-title {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- LINKS INSIDE CARDS ---------- */
+.link-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 0.5rem;
+}
+
+.link-row a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #c92a2a;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  color: #1b5e20;
+  background: rgba(255,255,255,0.4);
+}
+
+.link-row a:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+/* ---------- REVIEW CARDS ---------- */
+
+
+/* ---------- HOVER LIFT ---------- */
+.card:hover,
+.unit-card:hover {
+  transform: translateY(-3px);
+}
+
+main {
+  padding-bottom: 4rem;
+}
+  
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Algebra 2</h1>
+
+<header>
+  <div class="container">
+    <h1>AP Calculus AB</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
         <li><a href="bc.html">AP Calculus BC</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <h2>Algebra 2 Units</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Unit</th>
-          <th>Packet & Solutions</th>
-          <th>Homework & Solutions</th>
-          <th>Projects</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Unit 1 - Function and their Characteristics</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Desmos Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 2 - Quadratic Functions</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><!-- empty cell to keep table aligned --></td>
-        </tr>
-        <tr>
-          <td>Unit 3 - Polynomial Functions</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Rollercoaster Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 4 - Radical and Rational Functions</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Animal Species Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 5 - Exponential & Logarithmic Functions </td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Credit Score Project</a> | <a href="#">Zombie Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 6 - Sequences & Series </td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Sequence Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 7 - Trigonometry</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Temperature Project</a></td>
-        </tr>
-        <tr>
-          <td>Unit 8 - Probability & Statistics</td>
-          <td><a href="#">Packet</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Homework</a> | <a href="#">Solutions</a></td>
-          <td><a href="#">Statistics Project</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+<main class="container">
+
+<!-- ================= REVIEW ================= -->
+<h2>Important Resources</h2>
+<div class="grid">
+
+  <a class="card review-card u16" href="https://drive.google.com/file/d/1mutyWRXC6_pQ6VmuRNKH2HdkaXVtx3dd/view?usp=drive_link">
+     You Gotta Know Flashcards
+  </a>
+
+  <a class="card review-card u17" href="https://pcox44.github.io/flashcards/">
+     Online Flashcard Practice
+  </a>
+  
+  <a class="card review-card u18" href="https://drive.google.com/file/d/1nNsaIN1SrBttgsnQ6EE2jbx7T0Z4Oe-5/view?usp=drive_link" target="_blank">
+     What to Know by Unit
+  </a>
+  
+  <a class="card review-card u19" href="https://drive.google.com/file/d/1C_yCpbhFZZmDau099B0etnGpUsrMDSx5/view?usp=sharing" target="_blank">
+    AB Formula Sheet
+  </a>
+
+</div>
+
+<!-- ================= UNITS ================= -->
+<h2>AB Units</h2>
+<div class="grid">
+
+  <div class="unit-card u1">
+    <div class="unit-title">Unit 1 - Functions </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Desmos Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u2">
+    <div class="unit-title">Unit 2 - Quadratics </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Demsos Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u3">
+    <div class="unit-title">Unit 3 - Polynomials </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link"> Rollercoaster Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u4">
+    <div class="unit-title">Unit 4 - Radicals and Rationals </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Animal Species Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u5">
+    <div class="unit-title">Unit 5 - Exponentials and Logarithms </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link"> Zombie Project</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link"> Credit Score Project Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u6">
+    <div class="unit-title">Unit 6 - Sequences and Series </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Money Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u7">
+    <div class="unit-title">Unit 7 - Trigonometric Functions </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Temperature Project</a>
+      <a href="https://drive.google.com/file/d/13bbjxkp5G6jdX_b9FFUI9Pz3PE9ySbcR/view?usp=drive_link">Daylight Project</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="unit-card u8">
+    <div class="unit-title">Unit 8 - Probability and Statistics </div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1H6f3E280KMGTtuFmkR3LAUg1TED5WfUn/view?usp=drive_link">Packet</a>
+      <a href="https://www.youtube.com/playlist?list=PLxRSX8UqzWccSg2Y2U0E2-xvLPQaXfbK-">Videos by Topic</a>
+    </div>
+  </div>
+</div>
+  <h2>EMPE Materials </h2>
+<div class="grid">
+
+  <div class="unit-card u9">
+    <div class="unit-title">EMPE 1</div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1NVS4_emJddmGav169NGG-ZLpKMEH7s04/view?usp=drive_link">EMPE Review</a>
+      <a href="https://drive.google.com/file/d/1kG3n38l-lXpP1BtaXRUnaPUFsvrPQqP9/view?usp=drive_link">Solutions</a>
+    </div>
+  </div>
+
+  <div class="unit-card u10">
+    <div class="unit-title">EMPE 2</div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1NVS4_emJddmGav169NGG-ZLpKMEH7s04/view?usp=drive_link">EMPE Review</a>
+      <a href="https://drive.google.com/file/d/1c7_1i5xQoOqB6W43irPw5J_Z9UAVq_d8/view?usp=drive_link">Solutions</a>
+    </div>
+  </div>
+
+  <div class="unit-card u11">
+    <div class="unit-title">EMPE 3</div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1NVS4_emJddmGav169NGG-ZLpKMEH7s04/view?usp=drive_link">EMPE Review</a>
+      <a href="https://drive.google.com/file/d/1a15BJmjJW9gpfM8QtJwrGhAygCDWNH4J/view?usp=drive_link">Solutions</a>
+    </div>
+  </div>
+
+  <div class="unit-card u12">
+    <div class="unit-title">EMPE 4</div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1NVS4_emJddmGav169NGG-ZLpKMEH7s04/view?usp=drive_link">EMPE Review</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
+  
+  <div class="unit-card u12">
+    <div class="unit-title">EMPE 5</div>
+    <div class="link-row">
+      <a href="https://drive.google.com/file/d/1NVS4_emJddmGav169NGG-ZLpKMEH7s04/view?usp=drive_link">EMPE Review</a>
+      <a href="#">Solutions</a>
+    </div>
+  </div>
+</div>
+  
+  <h2>Regents Review </h2>
+<div class="grid">
+
+  <div class="unit-card u13">
+    <div class="unit-title">Regents Review</div>
+    <div class="link-row">
+      <a href="https://docs.google.com/document/d/10VOE5yGKk47HrvUYyXUM0ZBUZYDbW2wW7B5VaSl0K_s/edit?usp=drive_link">AP FRQ Problems</a>
+      <a href="https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam/past-exam-questions">AP Scoring Guidelines</a>
+      <a href="https://drive.google.com/file/d/1CzTJfqebkqRCPyJwLGxKF4Xscbhl_ykh/view?usp=drive_link"> Cox FRQ Review </a>
+      <a href="https://drive.google.com/file/d/1hlzm9fU1XmyV8AW9QFAeaA_z0Ih7Q3ad/view?usp=drive_link"> Cox FRQ Solutions</a>
+      <a href="https://drive.google.com/file/d/13viVDxd1ks4RYLsTyNfebRhH0xhUbCKy/view?usp=drive_link"> Super FRQ Review</a>
+      <a href="https://drive.google.com/file/d/1ulvw7uklDyyJ8D6Cn1xPzMvzJ9dKnNrg/view?usp=drive_link"> Super FRQ Solutions</a>
+    </div>
+  </div>
+
+
+  
+    </div>
+  </div>
+</div>
+</div>
+
+</main>
 
 </body>
 </html>
