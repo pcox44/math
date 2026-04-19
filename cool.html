@@ -1,138 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cool Math Stuff</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #fdf6f0;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cool Math Stuff</title>
 
-    /* ---------- Header ---------- */
-    header {
-      background-color: #d64541;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+<style>
+/* ---------- BASE ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #eaf4ff;
+  margin: 0;
+  color: #000;
+}
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-    }
+/* ---------- CONTAINER ---------- */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-      margin-top: 1rem;
-      padding-left: 0;
-    }
+/* ---------- HEADER ---------- */
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.25rem 0.5rem;
-      transition: background-color 0.3s, color 0.3s;
-      border-radius: 4px;
-    }
+header h1 {
+  color: #1e66d0;
+  margin-bottom: 0.5rem;
+}
 
-    nav a:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
 
-    h2 {
-      color: #d64541;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      font-weight: 600;
-    }
+nav a {
+  color: #1e66d0;
+  font-weight: 600;
+  text-decoration: none;
+}
 
-    /* ---------- Project Cards ---------- */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
+/* ---------- TITLE ---------- */
+h2 {
+  color: #1e66d0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-    .card {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+/* ---------- GRID ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
+/* ---------- CARD ---------- */
+.card {
+  display: block;
+  padding: 1.2rem;
+  border-radius: 14px;
+  border: 2px solid #2e7d32;
+  background: #ffffff;
+  text-decoration: none;
+  color: #1b5e20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.15s ease;
+}
 
-    .card button {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      background-color: #d64541;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
 
-    .card button:hover {
-      background-color: #a73630;
-    }
+.card-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
 
-    .card p {
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
+.card p {
+  font-size: 0.9rem;
+}
 
-    /* ---------- Responsive Styles ---------- */
-    @media (max-width: 768px) {
-      .projects {
-        gap: 1rem;
-      }
-    }
+/* subtle alternating colors */
+.card:nth-child(odd) {
+  background: #f8fbff;
+}
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      .card {
-        max-width: 100%;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      nav a {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+.card:nth-child(even) {
+  background: #eef6ff;
+}
+</style>
 </head>
+
 <body>
-  <header>
+
+<header>
+  <div class="container">
     <h1>Cool Math Stuff</h1>
     <nav>
       <ul>
@@ -141,62 +112,78 @@
         <li><a href="bc.html">AP Calculus BC</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <h2>Fun Math Projects</h2>
-    <section class="projects">
-  <div class="card">
-    <button onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
+<main class="container">
+
+<h2>Fun Math Projects</h2>
+
+<section class="projects">
+
+  <a class="card" href="https://qu0x.com" target="_blank">
+    <div class="card-title">Qu0x</div>
     <p>Use 5 numbers and math operations to reach a target number.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
-    <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
-    <p>Random walk simulation on a closed polygonal path.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
-    <p>Try to maximize Schur numbers through coloring strategies.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Picking a Porta-Potty</button>
-    <p>Apply the secretary problem concept in a fun new context.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Catching All Pokemon</button>
-    <p>A Coupon Collector Problem simulation themed with Pokemon.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
-    <p>Estimate π using a needle-drop simulation with footballs.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
-    <p>Visualize number mappings as beautiful animated patterns.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring with Numbers</button>
-    <p>Color the screen based on properties of numbers you select.</p>
-  </div>
+  </a>
 
-  <!-- NEW CARDS -->
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/life','_blank')">Game of Life</button>
-    <p>Simulate Conway's Game of Life with cells that live, die, or reproduce each step.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/barnsley','_blank')">Barnsley Fern</button>
-    <p>Generate the Barnsley Fern fractal using iterative function systems.</p>
-  </div>
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/floor','_blank')">Quotient Floor</button>
-    <p>Divide two numbers, take the floor, and graph the pattern of even and odd results.</p>
-  </div>
+  <a class="card" href="https://pcox44.github.io/uniform-sum" target="_blank">
+    <div class="card-title">Stick Simulation</div>
+    <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/ants" target="_blank">
+    <div class="card-title">Ants on Polygons</div>
+    <p>Random walk simulation on a closed polygonal path.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/schur" target="_blank">
+    <div class="card-title">Schur Colorings</div>
+    <p>Try to maximize Schur numbers through coloring strategies.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/porta-potty" target="_blank">
+    <div class="card-title">Picking a Porta-Potty</div>
+    <p>Apply the secretary problem concept in a fun new context.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/pokemon" target="_blank">
+    <div class="card-title">Catching All Pokémon</div>
+    <p>A Coupon Collector Problem simulation themed with Pokémon.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/buffon" target="_blank">
+    <div class="card-title">Buffon's Needle</div>
+    <p>Estimate π using a needle-drop simulation.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/mathdance" target="_blank">
+    <div class="card-title">Math Dance</div>
+    <p>Visualize number mappings as animated patterns.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/colors" target="_blank">
+    <div class="card-title">Coloring with Numbers</div>
+    <p>Color the screen based on number properties.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/life" target="_blank">
+    <div class="card-title">Game of Life</div>
+    <p>Simulate Conway's Game of Life.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/barnsley" target="_blank">
+    <div class="card-title">Barnsley Fern</div>
+    <p>Generate a classic fractal using iteration.</p>
+  </a>
+
+  <a class="card" href="https://pcox44.github.io/floor" target="_blank">
+    <div class="card-title">Quotient Floor</div>
+    <p>Explore patterns from floor division.</p>
+  </a>
+
 </section>
-  </main>
+
+</main>
+
 </body>
 </html>
