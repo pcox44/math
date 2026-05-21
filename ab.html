@@ -61,7 +61,18 @@ h2 {
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
-  
+
+.frq-grid .unit-card:nth-child(-n+3) {
+  grid-column: span 2;
+}
+
+.frq-grid .unit-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.frq-grid .unit-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
 /* ---------- BASE CARD ---------- */
 .card {
   display: block;
