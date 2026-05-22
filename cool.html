@@ -1,211 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <title>Cool Math Stuff</title>
-<link rel="icon" type="image/svg+xml" href="favicon (2).svg">
+<link rel="icon" type="image/svg+xml" href="favicon (2).svg"/>
 <style>
+:root {
+  --yellow-950: #3f2f00;
+  --yellow-900: #5f4300;
+  --yellow-800: #8a6100;
+  --yellow-700: #b8860b;
+  --yellow-600: #f2b705;
+  --yellow-500: #ffd43b;
+  --yellow-200: #fff3bf;
+  --yellow-100: #fff7d6;
+  --yellow-50: #fffbea;
+  --paper: #ffffff;
+  --ink: #2b250f;
+  --muted: #74684a;
+  --line: rgba(184, 134, 11, 0.20);
+  --shadow: 0 12px 28px rgba(63, 47, 0, 0.10);
+  --shadow-hover: 0 18px 36px rgba(63, 47, 0, 0.16);
+}
 
-/* ---------- BASE ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #fffbea; /* very light yellow */
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 212, 59, 0.34), transparent 34rem),
+    radial-gradient(circle at 88% 8%, rgba(255, 236, 153, 0.45), transparent 30rem),
+    linear-gradient(180deg, #fffbea 0%, #fffdf2 44%, #fff4c2 100%);
   margin: 0;
-  color: #2b2b2b;
+  color: var(--ink);
 }
 
-/* ---------- CONTAINER ---------- */
-.container {
-  width: 92%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
+.container { width: min(94%, 1220px); margin: 0 auto; }
+
+/* ---------- HERO ---------- */
+.site-hero { padding: 2.1rem 0 1.4rem; }
+
+.hero-panel {
+  background: linear-gradient(135deg, #8a6100 0%, #f2b705 56%, #ffe066 100%);
+  color: #2b250f;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ---------- HEADER ---------- */
-header {
-  background: #f7c948; /* strong yellow */
-  color: #2b2b2b;
-  text-align: center;
-  padding: 2rem 1rem;
+.hero-panel::after {
+  content: "π  ∑  √  ∞";
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.25rem);
+  bottom: -0.45rem;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 800;
+  opacity: 0.14;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255,255,255,0.24);
+  border: 1px solid rgba(255,255,255,0.34);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.8rem;
 }
 
 header h1 {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.95;
   margin: 0;
-  font-size: 2.8rem;
-  color: #2b2b2b;
+  letter-spacing: -0.055em;
 }
 
-/* ---------- NAV ---------- */
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-nav a {
-  color: #2b2b2b;
-  text-decoration: none;
+.hero-subtitle {
+  max-width: 760px;
+  margin: 1rem 0 0;
+  color: rgba(43,37,15,0.82);
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.55;
   font-weight: 600;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 1.25rem 0 0;
+  margin: 0;
 }
 
-/* ---------- TITLE ---------- */
-h2 {
-  text-align: center;
-  color: #b8860b;
-  margin: 2rem 0;
+nav a {
+  display: inline-flex;
+  align-items: center;
+  color: #2b250f;
+  font-weight: 800;
+  text-decoration: none;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.34);
+  padding: 0.62rem 0.9rem;
+  border-radius: 999px;
+  transition: 0.18s ease;
 }
+
+nav a:hover { background: rgba(255,255,255,0.38); transform: translateY(-2px); }
+main { padding-bottom: 4rem; }
+
+/* ---------- SECTION HEADINGS ---------- */
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.35rem 0 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--line);
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--yellow-950);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.section-heading p { margin: 0; color: var(--muted); font-size: 0.92rem; text-align: right; }
 
 /* ---------- GRID ---------- */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 
-/* ---------- CARD ---------- */
+/* ---------- CARDS ---------- */
 .card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.4rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: 0.2s;
-  border: 2px solid #ffe08a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 176px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.2rem 1.2rem 1.45rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-  border-color: #f7c948;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(184, 134, 11, 0.38);
 }
 
-/* ---------- BUTTON ---------- */
-.card button {
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: var(--accent, var(--yellow-600));
+}
+
+.card-title {
+  display: block;
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #2b2b2b;
-  background: #ffd84d;
-  border: none;
-  border-radius: 6px;
+  text-align: left;
+  border: 0;
   cursor: pointer;
-  transition: 0.2s;
+  border-radius: 13px;
+  padding: 0.85rem 0.9rem;
+  color: var(--yellow-950);
+  background: linear-gradient(135deg, rgba(255, 243, 191, 0.98), #ffffff 72%);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  box-shadow: inset 0 0 0 1px rgba(184, 134, 11, 0.15);
+  transition: 0.16s ease;
 }
 
-.card button:hover {
-  background: #f7c948;
+.card-title:hover {
+  background: var(--accent, var(--yellow-600));
+  color: #2b250f;
+  transform: translateY(-1px);
 }
 
-/* ---------- TEXT ---------- */
 .card p {
-  margin-top: 0.8rem;
-  font-size: 0.95rem;
-  color: #555;
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
+.open-note {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  color: var(--yellow-800);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
+/* ---------- PROJECT ACCENTS ---------- */
+.p1  { --accent: #f2b705; }
+.p2  { --accent: #fab005; }
+.p3  { --accent: #ffd43b; }
+.p4  { --accent: #e67700; }
+.p5  { --accent: #f59f00; }
+.p6  { --accent: #fcc419; }
+.p7  { --accent: #ff922b; }
+.p8  { --accent: #ffe066; }
+.p9  { --accent: #d9480f; }
+.p10 { --accent: #f08c00; }
+.p11 { --accent: #e9b949; }
+.p12 { --accent: #c47f00; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .section-heading { align-items: start; flex-direction: column; }
+  .section-heading p { text-align: left; }
+}
+
+@media (max-width: 620px) {
+  .site-hero { padding-top: 1rem; }
+  .hero-panel { border-radius: 22px; }
+  nav ul { gap: 0.5rem; }
+  nav a { width: 100%; justify-content: center; }
+  .projects { grid-template-columns: 1fr; }
+}
 </style>
 </head>
-
 <body>
-
-<header>
-  <h1>Cool Math Stuff</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ab.html">AP Calculus AB</a></li>
-      <li><a href="bc.html">AP Calculus BC</a></li>
-      <li><a href="algebra2.html">Algebra 2</a></li>
-    </ul>
-  </nav>
+<header class="site-hero">
+  <div class="container">
+    <div class="hero-panel">
+      <p class="hero-kicker">Math Projects & Simulations</p>
+      <h1>Cool Math Stuff</h1>
+      <p class="hero-subtitle">Explore interactive math projects, probability simulations, games, fractals, and visual patterns — all in one place.</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ab.html">AP Calculus AB</a></li>
+          <li><a href="bc.html">AP Calculus BC</a></li>
+          <li><a href="algebra2.html">Algebra 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 
 <main class="container">
-
-<h2>Fun Math Projects</h2>
-
-<div class="projects">
-
-  <div class="card">
-    <button onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
-    <p>Use 5 numbers and math operations to reach a target number.</p>
+  <div class="section-heading">
+    <h2>Fun Math Projects</h2>
+    <p>Click a project to open an interactive math exploration.</p>
   </div>
 
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
-    <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
+  <div class="projects">
+    <div class="card p1">
+      <button class="card-title" onclick="window.open('https://qu0x.com','_blank')">Qu0x</button>
+      <p>Use 5 numbers and math operations to reach a target number.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p2">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/uniform-sum','_blank')">Stick Simulation</button>
+      <p>Explore expected draws to reach a target sum with a uniform distribution.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p3">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
+      <p>Random walk simulation on a closed polygonal path.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p4">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
+      <p>Try to maximize Schur numbers through coloring strategies.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p5">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Picking a Porta-Potty</button>
+      <p>Apply the secretary problem concept in a fun new context.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p6">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Catching All Pokemon</button>
+      <p>A Coupon Collector Problem simulation themed with Pokemon.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p7">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
+      <p>Estimate π using a needle-drop simulation with footballs.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p8">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
+      <p>Visualize number mappings as beautiful animated patterns.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p9">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring with Numbers</button>
+      <p>Color the screen based on properties of numbers you select.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p10">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/life','_blank')">Game of Life</button>
+      <p>Simulate Conway's Game of Life with cells that live, die, or reproduce each step.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p11">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/barnsley','_blank')">Barnsley Fern</button>
+      <p>Generate the Barnsley Fern fractal using iterative function systems.</p>
+      <span class="open-note">Open project →</span>
+    </div>
+
+    <div class="card p12">
+      <button class="card-title" onclick="window.open('https://pcox44.github.io/floor','_blank')">Quotient Floor</button>
+      <p>Divide two numbers, take the floor, and graph the pattern of even and odd results.</p>
+      <span class="open-note">Open project →</span>
+    </div>
   </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/ants','_blank')">Ants on Polygons</button>
-    <p>Random walk simulation on a closed polygonal path.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/schur','_blank')">Schur Colorings</button>
-    <p>Try to maximize Schur numbers through coloring strategies.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/porta-potty','_blank')">Picking a Porta-Potty</button>
-    <p>Apply the secretary problem concept in a fun new context.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/pokemon','_blank')">Catching All Pokemon</button>
-    <p>A Coupon Collector Problem simulation themed with Pokemon.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/buffon','_blank')">Buffon's Needle</button>
-    <p>Estimate π using a needle-drop simulation with footballs.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/mathdance','_blank')">Math Dance</button>
-    <p>Visualize number mappings as beautiful animated patterns.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/colors','_blank')">Coloring with Numbers</button>
-    <p>Color the screen based on properties of numbers you select.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/life','_blank')">Game of Life</button>
-    <p>Simulate Conway's Game of Life with cells that live, die, or reproduce each step.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/barnsley','_blank')">Barnsley Fern</button>
-    <p>Generate the Barnsley Fern fractal using iterative function systems.</p>
-  </div>
-
-  <div class="card">
-    <button onclick="window.open('https://pcox44.github.io/floor','_blank')">Quotient Floor</button>
-    <p>Divide two numbers, take the floor, and graph the pattern of even and odd results.</p>
-  </div>
-
-</div>
-
 </main>
-
 </body>
 </html>
