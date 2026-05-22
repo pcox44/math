@@ -1,265 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <title>Algebra 2</title>
-<link rel="icon" type="image/svg+xml" href="favicon (2).svg">
+<link rel="icon" type="image/svg+xml" href="favicon (2).svg"/>
 <style>
-/* ---------- BASE ---------- */
+:root {
+  --red-950: #3b0a0a;
+  --red-900: #641414;
+  --red-800: #8f1d1d;
+  --red-700: #c92a2a;
+  --red-600: #e03131;
+  --red-100: #ffe3e3;
+  --red-50: #fff5f5;
+  --paper: #ffffff;
+  --ink: #241616;
+  --muted: #6f5b5b;
+  --line: rgba(201, 42, 42, 0.17);
+  --shadow: 0 12px 28px rgba(59, 10, 10, 0.10);
+  --shadow-hover: 0 18px 36px rgba(59, 10, 10, 0.16);
+  --resource-1: #c92a2a;
+  --resource-2: #a61e1e;
+  --resource-3: #e03131;
+  --resource-4: #f03e3e;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #fdf6f0;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201, 42, 42, 0.22), transparent 34rem),
+    radial-gradient(circle at 88% 8%, rgba(255, 107, 107, 0.24), transparent 30rem),
+    linear-gradient(180deg, #fff0f0 0%, #fff8f8 44%, #ffecec 100%);
   margin: 0;
-  color: #000;
+  color: var(--ink);
 }
 
-.container {
-  width: 92%;
-  max-width: 1200px;
-  margin: 0 auto;
+.container { width: min(94%, 1220px); margin: 0 auto; }
+
+/* ---------- HERO ---------- */
+.site-hero { padding: 2.1rem 0 1.4rem; }
+
+.hero-panel {
+  background: linear-gradient(135deg, #641414 0%, #c92a2a 55%, #ff8787 100%);
+  color: white;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ---------- HEADER ---------- */
+.hero-panel::after {
+  content: "f(x)  x²  log";
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.25rem);
+  bottom: -0.45rem;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 800;
+  opacity: 0.10;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.24);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.8rem;
+}
+
 header h1 {
-  text-align: center;
-  color: #c92a2a;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.055em;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  margin: 1rem 0 0;
+  color: rgba(255,255,255,0.88);
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.55;
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
+  padding: 1.25rem 0 0;
+  margin: 0;
 }
 
 nav a {
-  color: #c92a2a;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: 700;
   text-decoration: none;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.24);
+  padding: 0.62rem 0.9rem;
+  border-radius: 999px;
+  transition: 0.18s ease;
 }
 
-/* ---------- TITLES ---------- */
-h2 {
-  color: #c92a2a;
-  margin: 2rem 0 1rem;
-  text-align: center;
-}
+nav a:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+main { padding-bottom: 4rem; }
 
-/* ---------- GRID ---------- */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* ---------- SECTION HEADINGS ---------- */
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
   gap: 1rem;
+  margin: 2.35rem 0 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--line);
 }
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--red-950);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.section-heading p { margin: 0; color: var(--muted); font-size: 0.92rem; text-align: right; }
+
+/* ---------- GRIDS ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+.resource-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 
 /* ---------- CARDS ---------- */
-.card {
+.card, .unit-card {
+  position: relative;
   display: block;
-  padding: 1rem 1.2rem;
-  border: 2px solid #c92a2a;
-  border-radius: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+
+.card:hover, .unit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(201, 42, 42, 0.35);
+}
+
+.card::before, .unit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: var(--accent, var(--red-700));
+}
+
+.card {
+  min-height: 124px;
+  padding: 1.2rem 1.2rem 1.2rem 1.55rem;
   text-decoration: none;
-  font-weight: 600;
-  color: #7f1d1d;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: 0.15s ease;
-  background: #fff;
+  color: var(--red-950);
+  font-weight: 800;
+  line-height: 1.25;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-}
-
-/* ---------- UNIT CARDS ---------- */
-.unit-card {
-  padding: 1.2rem;
-  border-radius: 14px;
-  border: 2px solid #c92a2a;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  color: #7f1d1d;
-  font-weight: 600;
-}
-
-/* ---------- COLORS ---------- */
-.u1  { background: #4dabf7; }  /* blue */
-.u2  { background: #ff6b6b; }  /* red */
-.u3  { background: #51cf66; }  /* green */
-.u4  { background: #ffd43b; }  /* yellow */
-.u5  { background: #9775fa; }  /* purple */
-.u6  { background: #ffa94d; }  /* orange */
-.u7  { background: #38d9a9; }  /* teal */
-.u8  { background: #f06595; }  /* pink */
-
-.u9  { background: #74c0fc; }  /* light blue */
-.u10 { background: #ff8787; }  /* soft red */
-.u11 { background: #69db7c; }  /* light green */
-.u12 { background: #ffe066; }  /* soft yellow */
-.u13 { background: #b197fc; }  /* soft purple */
-/* ---------- UNIT TITLE ---------- */
-.unit-title {
+.card::after {
+  content: "Open →";
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* ---------- LINKS ---------- */
-.link-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
+.featured-card { font-size: 1.03rem; }
+.resource-title { display: block; font-size: 1.04rem; font-weight: 800; line-height: 1.25; }
+.resource-desc { display: block; margin-top: 0.55rem; color: var(--muted); font-size: 0.84rem; font-weight: 500; line-height: 1.45; }
+.review-card { background: linear-gradient(135deg, rgba(255, 227, 227, 0.96), #ffffff 62%); }
 
+.unit-card { padding: 1.15rem 1.15rem 1.15rem 1.45rem; }
+.unit-title { display: grid; gap: 0.25rem; margin-bottom: 1rem; }
+.unit-number { color: var(--accent, var(--red-700)); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.unit-name { color: var(--red-950); font-size: 1.04rem; font-weight: 800; line-height: 1.22; }
+
+/* ---------- LINKS INSIDE CARDS ---------- */
+.link-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
 .link-row a {
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  text-align: center;
+  font-size: 0.83rem;
+  font-weight: 700;
+  line-height: 1.15;
   text-decoration: none;
-  border: 1px solid #c92a2a;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-  color: #7f1d1d;
-  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(201, 42, 42, 0.18);
+  padding: 0.48rem 0.58rem;
+  border-radius: 11px;
+  color: var(--red-950);
+  background: #fffafa;
+  transition: 0.16s ease;
 }
 
 .link-row a:hover {
-  background: rgba(255,255,255,0.9);
+  background: var(--accent, var(--red-700));
+  border-color: var(--accent, var(--red-700));
+  color: white;
+  transform: translateY(-1px);
 }
 
-/* ---------- LAYOUT ---------- */
-main {
-  padding-bottom: 4rem;
+/* ---------- UNIT ACCENTS ---------- */
+.u1  { --accent: #c92a2a; }
+.u2  { --accent: #e03131; }
+.u3  { --accent: #a61e1e; }
+.u4  { --accent: #f03e3e; }
+.u5  { --accent: #d9480f; }
+.u6  { --accent: #f76707; }
+.u7  { --accent: #ad1457; }
+.u8  { --accent: #862e9c; }
+.u9  { --accent: #c92a2a; }
+.u10 { --accent: #e03131; }
+.u11 { --accent: #a61e1e; }
+.u12 { --accent: #f03e3e; }
+.u13 { --accent: #d9480f; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .section-heading { align-items: start; flex-direction: column; }
+  .section-heading p { text-align: left; }
 }
+
+@media (max-width: 620px) {
+  .site-hero { padding-top: 1rem; }
+  .hero-panel { border-radius: 22px; }
+  nav ul { gap: 0.5rem; }
+  nav a { width: 100%; justify-content: center; }
+  .grid { grid-template-columns: 1fr; }
+  .link-row { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
-
 <body>
-
-<header>
-  <div class="container">
-    <h1>Algebra 2</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ab.html">AP Calculus AB</a></li>
-        <li><a href="bc.html">AP Calculus BC</a></li>
-        <li><a href="cool.html">Cool Math Stuff</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+<header class="site-hero"><div class="container"><div class="hero-panel">
+<p class="hero-kicker">Algebra 2 Resource Hub</p>
+<h1>Algebra 2</h1>
+<p class="hero-subtitle">Packets, homework, projects, videos, flashcards, and review materials — organized so students can find what they need fast.</p>
+<nav><ul><li><a href="index.html">Home</a></li><li><a href="ab.html">AP Calculus AB</a></li><li><a href="bc.html">AP Calculus BC</a></li><li><a href="cool.html">Cool Math Stuff</a></li></ul></nav>
+</div></div></header>
 <main class="container">
-
-<!-- ================= REVIEW ================= -->
-<h2>Important Resources</h2>
-<div class="grid">
-
-  <a class="card u12" href="https://drive.google.com/file/d/1mutyWRXC6_pQ6VmuRNKH2HdkaXVtx3dd/view?usp=drive_link">
-    You Gotta Know Flashcards
-  </a>
-
-  <a class="card u11" href="https://pcox44.github.io/flashcards/">
-    Online Flashcard Practice
-  </a>
-
-  <a class="card u10" href="">
-    What to Know by Unit
-  </a>
-
-  <a class="card u9" href="">
-    Algebra 2 Mandos
-  </a>
-
+<div class="section-heading"><h2>Important Resources</h2><p>Start here for the highest-use Algebra 2 materials.</p></div>
+<div class="grid resource-grid">
+<a class="card review-card featured-card" style="--accent: var(--resource-1);" href="https://drive.google.com/file/d/1mutyWRXC6_pQ6VmuRNKH2HdkaXVtx3dd/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+  <span class="resource-title">You Gotta Know Flashcards</span>
+  <span class="resource-desc">Quick reference cards for the facts, formulas, and skills students should know cold.</span>
+</a>
+<a class="card review-card featured-card" style="--accent: var(--resource-2);" href="https://pcox44.github.io/flashcards/" target="_blank" rel="noopener noreferrer">
+  <span class="resource-title">Online Flashcard Practice</span>
+  <span class="resource-desc">Practice vocabulary, formulas, and core Algebra 2 skills online by topic or mixed review.</span>
+</a>
+<a class="card review-card featured-card" style="--accent: var(--resource-3);" href="#">
+  <span class="resource-title">What to Know by Unit</span>
+  <span class="resource-desc">A unit-by-unit checklist so students can see the big ideas and skills for each chapter.</span>
+</a>
+<a class="card review-card featured-card" style="--accent: var(--resource-4);" href="#">
+  <span class="resource-title">Algebra 2 Mandos</span>
+  <span class="resource-desc">Required practice and mastery materials for keeping foundational Algebra 2 skills sharp.</span>
+</a>
 </div>
-
-<!-- ================= UNITS ================= -->
-<h2>Units</h2>
+<div class="section-heading"><h2>Units</h2><p>Packets, homework, projects, and videos by unit.</p></div>
 <div class="grid">
-
-  <div class="unit-card u1">
-    <div class="unit-title">Unit 1 - Functions</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Desmos Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
+<div class="unit-card u1">
+  <div class="unit-title"><span class="unit-number">Unit 1</span><span class="unit-name">Functions</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Desmos Project</a>
+    <a href="#">Videos by Topic</a>
   </div>
-
-  <div class="unit-card u2">
-    <div class="unit-title">Unit 2 - Quadratics</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Desmos Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u3">
-    <div class="unit-title">Unit 3 - Polynomials</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Roller Coaster Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u4">
-    <div class="unit-title">Unit 4 - Radicals and Rationals</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Animal Species Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u5">
-    <div class="unit-title">Unit 5 - Exponentials and Logarithms</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Zombie Project | Credit Score Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u6">
-    <div class="unit-title">Unit 6 - Sequences and Series</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Money Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u7">
-    <div class="unit-title">Unit 7 - Trigonometric Functions</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Temperature Project | Sunlight Project</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
-  <div class="unit-card u8">
-    <div class="unit-title">Unit 8 - Probability and Statistics</div>
-    <div class="link-row">
-      <a href="#">Packet</a>
-      <a href="#">Homework</a>
-      <a href="#">Videos by Topic</a>
-    </div>
-  </div>
-
 </div>
-
+<div class="unit-card u2">
+  <div class="unit-title"><span class="unit-number">Unit 2</span><span class="unit-name">Quadratics</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Desmos Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u3">
+  <div class="unit-title"><span class="unit-number">Unit 3</span><span class="unit-name">Polynomials</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Roller Coaster Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u4">
+  <div class="unit-title"><span class="unit-number">Unit 4</span><span class="unit-name">Radicals and Rationals</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Animal Species Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u5">
+  <div class="unit-title"><span class="unit-number">Unit 5</span><span class="unit-name">Exponentials and Logarithms</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Zombie Project | Credit Score Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u6">
+  <div class="unit-title"><span class="unit-number">Unit 6</span><span class="unit-name">Sequences and Series</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Money Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u7">
+  <div class="unit-title"><span class="unit-number">Unit 7</span><span class="unit-name">Trigonometric Functions</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Temperature Project | Sunlight Project</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+<div class="unit-card u8">
+  <div class="unit-title"><span class="unit-number">Unit 8</span><span class="unit-name">Probability and Statistics</span></div>
+  <div class="link-row">
+    <a href="#">Packet</a>
+    <a href="#">Homework</a>
+    <a href="#">Videos by Topic</a>
+  </div>
+</div>
+</div>
 </main>
-
 </body>
 </html>
